@@ -44,6 +44,9 @@ body {
     font-family: "Times new Roman", Times, serif;
     width: 66%;
   }
+  nav{
+    margin-bottom: 40px;
+  }
 
   footer{
     background-color: #2f3c50;
