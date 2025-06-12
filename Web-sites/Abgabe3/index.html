@@ -4,14 +4,12 @@
     <title>PeerProject3</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-	<link rel="icon" type="image/x-icon" href="img/favicon.ico">
+	  <link rel="icon" type="image/x-icon" href="img/favicon.ico">
     <link rel="stylesheet" href="css/meins.css">
-    <script src="js/meinJS.js" defer></script>
+    <script src="js/meins.js" defer></script>
   </head>
     
   <body>
-    <h3>ACHTUNG: Abgabe erst nach den Ferien!</h3>
-
 	  <h1>Gästebuchfunktion</h1>
 	  <p>Bitte programmiere eine erweiterte Gästebuchfunktion. User sollen in unterschiedliche Text-Feldern auf der Webseite ihren Namen, ihr Alter, ihren Wohnort und eine Nachricht (mehrzeiligen Textfeld) hinterlassen können.</p>
 	  <p>Gestalte die Seite mit CSS.</p>
@@ -19,5 +17,23 @@
 	  <p>Dieser Post soll auf der Webseite mit Zeilenumbruch ausgegeben werden, so dass ein weiterer Eintrag in der Zeile darunter erscheint.</p>
 	  <p>Viel Spaß und Erfolg!</p>
     
+    <h1>Gästebuch Chat</h1>
+
+    <main id="chat">Keine Posts vorhanden.</main>
+
+    <div>
+      <h2>Nachricht verfassen</h2>
+      <input type="text" id="name" placeholder="Name" >
+      <input type="text" id="age" placeholder="Alter" >
+      <input type="text" id="wohnort" placeholder="Wohnort" >
+      <br>
+      <textarea name="message" id="message" placeholder="Nachricht" rows="12" cols="80"></textarea>
+      <br>
+      <button id="send" onclick="sendMessage()">Absenden</button>
+      <button id="clear" onclick="clear()">Zurücksetzen</button>
+      <p id="fehler"></p>
+    </div>
+
+
   </body>
 </html>

@@ -1,0 +1,45 @@
+h1,h2{
+    color: rgb(16, 71, 32);
+    background-color: rgb(161, 161, 153);
+    width: 80%;
+}
+
+main{
+    width: 50%;
+    font-display: block;
+    padding: 5px;
+    margin: 10px;
+    background-color: rgb(180, 202, 202);
+}
+.post{
+    background-color: rgb(193, 226, 100);
+    padding: 9px;
+    margin: 10px;
+    margin-bottom: 15px;
+}
+input{
+    margin-right: 28px;
+}
+
+#fehler{
+    color: rgb(255, 0, 0);
+}
+#send{
+    font-size: 22px;
+    padding: 5px;
+    background-color: rgb(81, 141, 81);
+}
+#clear{
+    font-size: 22px;
+    padding: 5px;
+    background-color: rgb(141, 100, 81);
+}
+
+#message{
+    margin: 30px;
+    margin-left: 0px;
+}
+
+body{
+    margin: 20px;
+}
