@@ -48,6 +48,39 @@
 }
 
 
+/*Accordion*/
+
+ /* Style the buttons that are used to open and close the accordion panel */
+.accordion {
+  background-color: #8251af;
+  color: #000000;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  text-align: left;
+  border: #000 solid 2px;
+  outline: none;
+  transition: 0.4s;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.activeAccordion, .accordion:hover {
+  background-color: rgb(88, 48, 121);
+}
+
+/* Style the accordion panel. Note: hidden by default */
+.panel {
+  padding: 18px;
+  background-color: #9d6ccb;
+  display: none;
+  overflow: hidden;
+} 
+
+
+
+
+
 
 
 /* ----------Element Deklaration---------- */
@@ -90,7 +123,7 @@ header {
 }
 
 nav {
-  margin-bottom: 80px;
+  margin-bottom: 10px;
   /*grid-area: 2,1,3,3;*/
 }
 
@@ -124,6 +157,22 @@ footer {
   /*grid-area: 4,1,5,3;*/
 }
 
+/*figure{
+  background-color: #6c74cb;
+}*/
+
+
+article{
+  width: 30%;
+  font-size: 20px;
+
+  background-color: rgb(87, 145, 109);
+
+  margin-left: 40px;
+  margin-bottom: 40px;
+  padding: 15px;
+}
+
 li {
   margin-top: 20px;
 }
@@ -138,7 +187,7 @@ li {
   background-color: #6c74cb;
 
   text-align: justify;
-  font-size: 22px;
+  font-size: 26px;
   font-family: "Times new Roman", Times, serif;
 }
 
@@ -159,14 +208,29 @@ li {
 
 /* ----------Identifier Deklaration---------- */
 
+#settingsBlock{
+  margin-bottom: 80px;
+}
+
+#settings{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+#bild1 {
+  /*Später in % angeben*/
+  width: 100%;
+  height: 350px;
+}
+
+#bild2 {
+  width: 100%;
+  height: 350px;
+}
 
 
 /* ----------Rest---------- */
-figure img {
-  /*Später in % angeben*/
-  width: 900px;
-  height: 350px;
-}
 
 header h1, header p {
   margin: 0px;

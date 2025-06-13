@@ -12,8 +12,8 @@
   <script src="js/javascript.js" defer></script>
 </head>
 
-<body>
-  <header id="navStart">
+<body id="navStart">
+  <header>
     <div>
       <h1>Überschrift</h1>
       <p>Text neben Überschrift</p>
@@ -23,15 +23,26 @@
     <img class="headerBild" src="img/dummy.jpg " alt="Dummy-Bild">
   </header>
   <nav class="icon-bar">
-    <a class="active" href="#navStart"><i
-        class="fa fa-home"></i>Start</a><!--später vielleicht auch Einstellungen oder so-->
+    <a class="active" href="#navStart"><i class="fa fa-home"></i>Start</a>
     <!--Vielleicht später zu den nächsten 3 Teilen aufklappbare Unter-Menüs, falls viel Inhalt-->
-    <a href="#navInfos1"><i
-        class="fa fa-book"></i>Infos1</a>
-    <a href="#"><i
-        class="fa fa-file-text"></i>Infos2</a><!---genauere Infos zu einem anderen Bereich, vielleicht etwas zum Ausfüllen-->
-    <a href="#"><i class="fa fa-question-circle"></i>Interaktives</a><!---Quiz und vielleicht etwas Ähnliches-->
+    <a href="#navInfos1"><i class="fa fa-book"></i>Infos1</a>
+    <a href="#navInfos2"><i class="fa fa-file-text"></i>Infos2</a>
+    <a href="#navInt"><i class="fa fa-question-circle"></i>Interaktives</a>
   </nav>
+
+  <div id="settingsBlock">
+    <button class="accordion">Einstellungen öffnen</button>
+    <div class="panel">
+      <div id="settings">
+        <div>abcdefgh</div>
+        <div>abcdefgh</div>
+        <div>abcdefgh</div>
+        <div>abcdefgh</div>
+      </div>
+    </div>
+  </div>
+
+
   <main>
     <section>
       <div class="block">
@@ -47,7 +58,7 @@
         Etiam sit amet orci eget eros faucibus tincidunt. Duis leo. Sed fringilla mauris sit amet nibh. Donec sodales
         sagittis magna. Sed consequat, leo
         <figure>
-          <img src="img/dummy.jpg" alt="Dummy-Bild">
+          <img src="img/dummy.jpg" alt="Dummy-Bild" id="bild1">
           <figcaption>Hier würde das Bild <br>beschrieben werden</figcaption>
         </figure>
       </div>
@@ -70,7 +81,7 @@
       </aside>
     </section>
 
-  
+
     <section id="navInfos1">
       <div class="block">
         <h2>Infos zum ersten Teilgebiet</h2>
@@ -83,6 +94,8 @@
         lorem.
         Maecenas nec odio et ante tincidunt tempus. Donec vitae sapien ut libero venenatis faucibus. Nullam quis ante.
         Etiam sit amet orci eget
+        <br><br>
+        Vielleicht noch irgendwas hier hin
       </div>
       <aside class="block littleBlock">
         <h3>Galerie</h3>
@@ -95,9 +108,9 @@
         <h3>Irgendwas, wo Filter angewendet werden können</h3>
         <input type="text" placeholder="1">
         <input type="text" placeholder="2">
-        <input type="radio">
-        <input type="radio">
-        <input type="radio">
+        <input type="radio" name="auswahl">
+        <input type="radio" name="auswahl">
+        <input type="radio" name="auswahl">
         <button>1</button>
         <button>Zurücksetzen</button>
         <ul>
@@ -108,6 +121,111 @@
         </ul>
       </div>
     </section>
+
+
+    <section id="navInfos2">
+      <div class="block littleBlock">
+        <h2>asgfshg</h2>
+        venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus
+        elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae,
+        eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut
+        metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper
+        ultricies nisi. Nam eget dui. Etiam rhoncus.
+      </div>
+      <div class="block littleBlock">
+        <h2>asgfshg</h2>
+        venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus
+        elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae,
+        eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut
+        metus varius laoreet. Quisque rutrum. Aenean imperdiet. Etiam ultricies nisi vel augue. Curabitur ullamcorper
+        ultricies nisi. Nam eget dui. Etiam rhoncus.
+      </div>
+      <figure>
+        <img src="img/dummy.jpg" alt="Dummy-Bild" id="bild2">
+        <figcaption>Hier würde das Bild <br>beschrieben werden</figcaption>
+      </figure>
+    </section>
+
+
+    <section id="navInt">
+      <div class="block bigBlock">
+        <h2>Quiz</h2>
+        <article>
+          <h4>Frage1: ogtfzzf</h4>
+          <ol type="A">
+            <li><input type="radio" name="frage1">Antwort1</li>
+            <li><input type="radio" name="frage1">Antwort2</li>
+            <li><input type="radio" name="frage1">Antwort3</li>
+            <li><input type="radio" name="frage1">Antwort4</li>
+          </ol>
+        </article>
+        <article>
+          <h4>Frage2: ogtfzzf</h4>
+          <ol type="A">
+            <li><input type="radio" name="frage2">Antwort1</li>
+            <li><input type="radio" name="frage2">Antwort2</li>
+            <li><input type="radio" name="frage2">Antwort3</li>
+            <li><input type="radio" name="frage2">Antwort4</li>
+          </ol>
+        </article>
+        <article>
+          <h4>Frage3: ogtfzzf</h4>
+          <ol type="A">
+            <li><input type="radio" name="frage3">Antwort1</li>
+            <li><input type="radio" name="frage3">Antwort2</li>
+            <li><input type="radio" name="frage3">Antwort3</li>
+            <li><input type="radio" name="frage3">Antwort4</li>
+          </ol>
+        </article>
+        <article>
+          <h4>Frage4: ogtfzzf</h4>
+          <ol type="A">
+            <li><input type="checkbox" name="frage4">Antwort1</li>
+            <li><input type="checkbox" name="frage4">Antwort2</li>
+            <li><input type="checkbox" name="frage4">Antwort3</li>
+            <li><input type="checkbox" name="frage4">Antwort4</li>
+          </ol>
+        </article>
+        <article>
+          <h4>Frage5: ogtfzzf</h4>
+          <ol type="A">
+            <li><input type="checkbox" name="frage4">Antwort1</li>
+            <li><input type="checkbox" name="frage4">Antwort2</li>
+            <li><input type="checkbox" name="frage4">Antwort3</li>
+            <li><input type="checkbox" name="frage4">Antwort4</li>
+          </ol>
+        </article>
+        <article>
+          <h4>Frage6: ogtfzzf</h4>
+          <input type="text" placeholder="Antwort">
+        </article>
+        <article>
+          <h4>Frage7: ogtfzzf</h4>
+          <input type="text" placeholder="Antwort">
+        </article>
+        <article>
+          <h4>Frage8: ogtfzzf</h4>
+          <input type="range">
+        </article>
+        <article>
+          <h4>Frage9: ogtfzzf</h4>
+          <input type="range">
+        </article>
+        <article>
+          <h4>Frage10: ogtfzzf</h4>
+          <input type="range">
+        </article>
+        <article>
+          <h4>Abgabe</h4>
+          <button>Beenden</button>
+          <p>Ergebnis</p>
+        </article>
+      </div>
+      <div class="block bigBlock">
+        <h2>Irgendwas interessantes sollte hier hin</h2>
+      </div>
+    </section>
+
 
   </main>
   <footer>
