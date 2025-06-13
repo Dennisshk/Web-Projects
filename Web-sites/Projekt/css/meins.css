@@ -85,6 +85,10 @@
 
 
 /* ----------Element Deklaration---------- */
+h1,h2,h3,h4,h5,h6{
+  font-family: 'Lobster', cursive;
+}
+
 body {
   margin-bottom: 0px;
   padding-bottom: 0px;
