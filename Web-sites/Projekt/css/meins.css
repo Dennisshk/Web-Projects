@@ -50,7 +50,7 @@
 
 /*Accordion*/
 
- /* Style the buttons that are used to open and close the accordion panel */
+/* Style the buttons that are used to open and close the accordion panel */
 .accordion {
   background-color: #8251af;
   color: #000000;
@@ -65,17 +65,18 @@
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
-.activeAccordion, .accordion:hover {
+.activeAccordion,
+.accordion:hover {
   background-color: rgb(88, 48, 121);
 }
 
 /* Style the accordion panel. Note: hidden by default */
 .panel {
   padding: 18px;
-  background-color: #9d6ccb;
+  background-color: #886ccb;
   display: none;
   overflow: hidden;
-} 
+}
 
 
 
@@ -118,7 +119,6 @@ header {
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 10px;
-  ;
   /*grid-area: 1/1/2/3;*/
 }
 
@@ -130,13 +130,16 @@ nav {
 
 /*Teilt die Blöcke innerhalb eines Gebiets der Navigation auf*/
 section {
+  /*Lässt die Navigationsbar etwas über dem Ziel ankommen*/
+  scroll-margin-top: 80px;
+
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   gap: 20px;
   -ms-flex-align: center;
 
-  margin-bottom: 80px;
+  margin-bottom: 230px;
   /*grid-area: 3,1,4,3;*/
 }
 
@@ -152,7 +155,6 @@ footer {
   padding-top: 50px;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   justify-content: space-around;
   /*grid-area: 4,1,5,3;*/
 }
@@ -162,7 +164,7 @@ footer {
 }*/
 
 
-article{
+article {
   width: 30%;
   font-size: 20px;
 
@@ -208,11 +210,13 @@ li {
 
 /* ----------Identifier Deklaration---------- */
 
-#settingsBlock{
-  margin-bottom: 80px;
+#settingsBlock {
+  margin-bottom: 40px;
 }
 
-#settings{
+#settings {
+  margin-bottom: 20px;
+
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -232,7 +236,8 @@ li {
 
 /* ----------Rest---------- */
 
-header h1, header p {
+header h1,
+header p {
   margin: 0px;
   padding: 0px;
   padding-bottom: 25px;
