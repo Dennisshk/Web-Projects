@@ -5,9 +5,53 @@ function quizbutton() {
     document.getElementById("questions").style.display = "block";
     document.getElementById("quiztitel").innerHTML = "Abgabe:";
   } else if (document.getElementById("quizbutton").innerHTML === "Auswertung") {
+    x = berechnePunkte();
+    message = nachricht(x);
 
+    document.getElementById("quizbutton").innerText = "Beenden";
+    document.getElementById("ergebnis").innerHTML = "Du hast <strong>"+x+"</strong> von 13 richtige Antworten. Das ist "+message;
   } else {
+    document.getElementById("quizbutton").innerText = "Starten";
+    document.getElementById("questions").style.display = "none";
+    document.getElementById("quiztitel").innerHTML = "Quiz";
+    document.getElementById("ergebnis").innerHTML = "";
+  }
+}
 
+function berechnePunkte() {
+  return 0;
+}
+
+function nachricht(x) {
+  switch (x) {
+    case 0:
+      return "katastrophal. Selbst mit Zufall hätte man besser antworten können.";
+    case 1:
+      return "schrecklich.";
+    case 2:
+      return "schlecht.";
+    case 3:
+      return "wirklich nicht gut.";
+    case 4:
+      return "nicht gut.";
+    case 5:
+      return "Es ist akzeptabel, aber nicht gut.";
+    case 6:
+      return "Es ist OK.";
+    case 7:
+      return "ganz OK.";
+    case 8:
+      return "garnicht mal so schlecht.";
+    case 9:
+      return "gut.";
+    case 10:
+      return "ziemlich gut";
+    case 11:
+      return "sehr gut.";
+    case 12:
+      return "faszinierend.";
+    default:
+      return "bemerkenswert.";
   }
 }
 
@@ -17,8 +61,13 @@ function rangeValue() {
 }
 
 // ------- Einstellungen-Buttons -------
-function neueSchriftgroesse() {
-  let size = document.getElementById("range1").value + "px";
+function neueSchriftgroesse(standard) {
+  let size;
+  if (standard) {
+    size = "26px"
+  } else {
+    size = document.getElementById("range1").value + "px";
+  }
 
   //Klassennamen geben ein Array zurück
   let blockArray = document.getElementsByClassName("block");
@@ -31,6 +80,16 @@ function neueSchriftgroesse() {
     articles[i].style.fontSize = size;
   }
 }
+
+
+function navbar() {
+  if (document.getElementById("on").checked) {
+    document.getElementsByClassName("icon-bar")[0].style.position = "sticky"
+  } else {
+    document.getElementsByClassName("icon-bar")[0].style.position = "static"
+  }
+}
+
 
 function design() {
   if (document.getElementById("hell").checked) {

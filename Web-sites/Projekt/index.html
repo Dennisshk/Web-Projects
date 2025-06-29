@@ -12,7 +12,7 @@
   <script src="js/javascript.js" defer></script>
 </head>
 
-<body id="navStart">
+<body class="navStart">
   <header>
     <div>
       <h1>Überschrift</h1>
@@ -50,7 +50,7 @@
           <h3>Schriftgröße</h3>
           <input id="range1" type="range" min="10" max="40" onchange="rangeValue()"><span id="rangeValue"></span>
           <br><br>
-          <button onclick="neueSchriftgroesse()">Anwenden</button>
+          <button onclick="neueSchriftgroesse(false)">Anwenden</button><button onclick="neueSchriftgroesse(true)">Standard</button>
         </div>
         <div>
           <h3>Navigation</h3><br>
