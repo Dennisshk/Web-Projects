@@ -35,25 +35,27 @@
     <div class="panel">
       <div id="settings">
         <div>
-          <h3>Sprache ändern</h3>
+          <h3>Sprache ändern</h3><br>
           <button>Deutsch</button>
-          <br><br><br>
+          <br><br>
           <button>Englisch</button>
         </div>
         <div>
-          <h3>Design</h3>
-          <button>Hell</button>
-          <br><br><br>
-          <button>Dunkel</button>
+          <h3>Design</h3><br>
+          <input onclick="Design()" type="radio" name="design" id="hell" value="hell" checked><label for="hell">Hell</label>
+          <br><br>
+          <input onclick="Design()" type="radio" name="design" id="dunkel" value="dunkel"><label for="dunkel">Dunkel</label>
         </div>
         <div>
           <h3>Schriftgröße</h3>
-          <input type="range" min="10" max="40" value="16">
+          <input id="range1" type="range" min="10" max="40" onchange="rangeValue()"><span id="rangeValue"></span>
+          <br><br>
+          <button onclick="neueSchriftgroesse()">Anwenden</button>
         </div>
         <div>
-          <h3>Navigation</h3>
+          <h3>Navigation</h3><br>
           <button>einblenden</button>
-          <br><br><br>
+          <br><br>
           <button>asublenden</button>
         </div>
       </div>
@@ -168,85 +170,91 @@
     <section id="navInt">
       <!---Grid Layout?-->
       <div class="block bigBlock">
-        <h2>Quiz</h2>
+        <div id="questions">
+          <h2>Quiz</h2>
+          <article>
+            <h4>Frage1: ogtfzzf</h4>
+            <ol type="A">
+              <li><input type="radio" name="frage1" id="f1a1"><label for="f1a1">Antwort 1</label></li>
+              <li><input type="radio" name="frage1" id="f1a2"><label for="f1a2">Antwort 2</label></li>
+              <li><input type="radio" name="frage1" id="f1a3"><label for="f1a3">Antwort 1</label></li>
+              <li><input type="radio" name="frage1" id="f1a4"><label for="f1a4">Antwort 1</label></li>
+            </ol>
+          </article>
+          <article>
+            <h4>Frage2: ogtfzzf</h4>
+            <ol type="A">
+              <li><input type="radio" name="frage2" id="f2a1"><label for="f2a1">Antwort 1</label></li>
+              <li><input type="radio" name="frage2" id="f2a2"><label for="f2a2">Antwort 1</label></li>
+              <li><input type="radio" name="frage2" id="f2a3"><label for="f2a3">Antwort 1</label></li>
+              <li><input type="radio" name="frage2" id="f2a4"><label for="f2a4">Antwort 1</label></li>
+            </ol>
+          </article>
+          <article>
+            <h4>Frage3: ogtfzzf</h4>
+            <ol type="A">
+              <li><input type="radio" name="frage3" id="f3a1"><label for="f3a1">Antwort 1</label></li>
+              <li><input type="radio" name="frage3" id="f3a2"><label for="f3a2">Antwort 1</label></li>
+              <li><input type="radio" name="frage3" id="f3a3"><label for="f3a3">Antwort 1</label></li>
+              <li><input type="radio" name="frage3" id="f3a4"><label for="f3a4">Antwort 1</label></li>
+            </ol>
+          </article>
+          <article>
+            <h4>Frage4: ogtfzzf</h4>
+            <ol type="A">
+              <li><input type="checkbox" name="frage4" id="f4a1"><label for="f4a1">Antwort 1</label></li>
+              <li><input type="checkbox" name="frage4" id="f4a2"><label for="f4a2">Antwort 1</label></li>
+              <li><input type="checkbox" name="frage4" id="f4a3"><label for="f4a3">Antwort 1</label></li>
+              <li><input type="checkbox" name="frage4" id="f4a4"><label for="f4a4">Antwort 1</label></li>
+            </ol>
+          </article>
+          <article>
+            <h4>Frage5: ogtfzzf</h4>
+            <ol type="A">
+              <li><input type="checkbox" name="frage4" id="f1a2"><label for="f1a1">Antwort 1</label></li>
+              <li><input type="checkbox" name="frage4" id="f1a2"><label for="f1a1">Antwort 1</label></li>
+              <li><input type="checkbox" name="frage4" id="f1a2"><label for="f1a1">Antwort 1</label></li>
+              <li><input type="checkbox" name="frage4" id="f1a2"><label for="f1a1">Antwort 1</label></li>
+            </ol>
+          </article>
+          <article>
+            <h4>Frage6: ogtfzzf</h4>
+            <input type="text" placeholder="Antwort">
+          </article>
+          <article>
+            <h4>Frage7: ogtfzzf</h4>
+            <input type="text" placeholder="Antwort">
+          </article>
+          <article>
+            <h4>Frage8: ogtfzzf</h4>
+            <input type="range">
+          </article>
+          <article>
+            <h4>Frage9: ogtfzzf</h4>
+            <input type="range">
+          </article>
+          <article>
+            <h4>Frage10: ogtfzzf</h4>
+            <input type="range">
+          </article>
+        </div>
         <article>
-          <h4>Frage1: ogtfzzf</h4>
-          <ol type="A">
-            <li><input type="radio" name="frage1">Antwort1</li>
-            <li><input type="radio" name="frage1">Antwort2</li>
-            <li><input type="radio" name="frage1">Antwort3</li>
-            <li><input type="radio" name="frage1">Antwort4</li>
-          </ol>
-        </article>
-        <article>
-          <h4>Frage2: ogtfzzf</h4>
-          <ol type="A">
-            <li><input type="radio" name="frage2">Antwort1</li>
-            <li><input type="radio" name="frage2">Antwort2</li>
-            <li><input type="radio" name="frage2">Antwort3</li>
-            <li><input type="radio" name="frage2">Antwort4</li>
-          </ol>
-        </article>
-        <article>
-          <h4>Frage3: ogtfzzf</h4>
-          <ol type="A">
-            <li><input type="radio" name="frage3">Antwort1</li>
-            <li><input type="radio" name="frage3">Antwort2</li>
-            <li><input type="radio" name="frage3">Antwort3</li>
-            <li><input type="radio" name="frage3">Antwort4</li>
-          </ol>
-        </article>
-        <article>
-          <h4>Frage4: ogtfzzf</h4>
-          <ol type="A">
-            <li><input type="checkbox" name="frage4">Antwort1</li>
-            <li><input type="checkbox" name="frage4">Antwort2</li>
-            <li><input type="checkbox" name="frage4">Antwort3</li>
-            <li><input type="checkbox" name="frage4">Antwort4</li>
-          </ol>
-        </article>
-        <article>
-          <h4>Frage5: ogtfzzf</h4>
-          <ol type="A">
-            <li><input type="checkbox" name="frage4">Antwort1</li>
-            <li><input type="checkbox" name="frage4">Antwort2</li>
-            <li><input type="checkbox" name="frage4">Antwort3</li>
-            <li><input type="checkbox" name="frage4">Antwort4</li>
-          </ol>
-        </article>
-        <article>
-          <h4>Frage6: ogtfzzf</h4>
-          <input type="text" placeholder="Antwort">
-        </article>
-        <article>
-          <h4>Frage7: ogtfzzf</h4>
-          <input type="text" placeholder="Antwort">
-        </article>
-        <article>
-          <h4>Frage8: ogtfzzf</h4>
-          <input type="range">
-        </article>
-        <article>
-          <h4>Frage9: ogtfzzf</h4>
-          <input type="range">
-        </article>
-        <article>
-          <h4>Frage10: ogtfzzf</h4>
-          <input type="range">
-        </article>
-        <article>
-          <h4>Abgabe</h4>
-          <button>Beenden</button>
-          <p>Ergebnis</p>
+          <h2 id="quiztitel">Quiz</h2>
+          <button onclick="quizbutton()" id="quizbutton">Starten</button>
+          <p id="ergebnis"></p>
         </article>
       </div>
+
+
       <div class="block bigBlock">
-        <h2>Irgendwas interessantes sollte hier hin</h2>
+        <h2>Irgendwas</h2>
       </div>
     </section>
 
 
   </main>
+
+
   <footer>
     <ul>
       <li>irgendwelche Infos</li>
