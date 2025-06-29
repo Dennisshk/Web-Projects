@@ -12,7 +12,7 @@
   <script src="js/javascript.js" defer></script>
 </head>
 
-<body class="navStart">
+<body id="navStart">
   <header>
     <div>
       <h1>Überschrift</h1>
@@ -48,7 +48,7 @@
         </div>
         <div>
           <h3>Schriftgröße</h3>
-          <input id="range1" type="range" min="10" max="40" onchange="rangeValue()"><span id="rangeValue"></span>
+          <input id="size" type="range" min="10" max="40" onchange="rangeValue()"><span id="rangeValue1"></span>
           <br><br>
           <button onclick="neueSchriftgroesse(false)">Anwenden</button><button onclick="neueSchriftgroesse(true)">Standard</button>
         </div>
@@ -211,31 +211,31 @@
           <article>
             <h4>Frage5: ogtfzzf</h4>
             <ol type="A">
-              <li><input type="checkbox" name="frage4" id="f1a2"><label for="f1a1">Antwort 1</label></li>
-              <li><input type="checkbox" name="frage4" id="f1a2"><label for="f1a1">Antwort 1</label></li>
-              <li><input type="checkbox" name="frage4" id="f1a2"><label for="f1a1">Antwort 1</label></li>
-              <li><input type="checkbox" name="frage4" id="f1a2"><label for="f1a1">Antwort 1</label></li>
+              <li><input type="checkbox" name="frage4" id="f5a1"><label for="f5a1">Antwort 1</label></li>
+              <li><input type="checkbox" name="frage4" id="f5a2"><label for="f5a2">Antwort 1</label></li>
+              <li><input type="checkbox" name="frage4" id="f5a3"><label for="f5a3">Antwort 1</label></li>
+              <li><input type="checkbox" name="frage4" id="f5a4"><label for="f5a4">Antwort 1</label></li>
             </ol>
           </article>
           <article>
             <h4>Frage6: ogtfzzf</h4>
-            <input type="text" placeholder="Antwort">
+            <input type="text" placeholder="Antwort" id="f6">
           </article>
           <article>
             <h4>Frage7: ogtfzzf</h4>
-            <input type="text" placeholder="Antwort">
+            <input type="text" placeholder="Antwort" id="f7">
           </article>
           <article>
             <h4>Frage8: ogtfzzf</h4>
-            <input type="range">
+            <input id="f8" type="range" min="1" max="10" onchange="rangeValue()"><span id="rangeValue2"></span>
           </article>
           <article>
             <h4>Frage9: ogtfzzf</h4>
-            <input type="range">
+            <input id="f9" type="range" min="10" max="30" onchange="rangeValue()"><span id="rangeValue3"></span>
           </article>
           <article>
             <h4>Frage10: ogtfzzf</h4>
-            <input type="range">
+            <input id="f10" type="range" min="100" max="150" onchange="rangeValue()"><span id="rangeValue4"></span>
           </article>
         </div>
         <article>

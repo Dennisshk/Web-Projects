@@ -1,15 +1,18 @@
+// ----Quiz-----
 function quizbutton() {
   if (document.getElementById("quizbutton").innerHTML === "Starten") {
     console.log("test");
     document.getElementById("quizbutton").innerText = "Auswertung";
     document.getElementById("questions").style.display = "block";
     document.getElementById("quiztitel").innerHTML = "Abgabe:";
+    disableQuizElements(false);
   } else if (document.getElementById("quizbutton").innerHTML === "Auswertung") {
     x = berechnePunkte();
     message = nachricht(x);
 
     document.getElementById("quizbutton").innerText = "Beenden";
-    document.getElementById("ergebnis").innerHTML = "Du hast <strong>"+x+"</strong> von 13 richtige Antworten. Das ist "+message;
+    document.getElementById("ergebnis").innerHTML = "Du hast <strong>" + x + "</strong> von 13 richtige Antworten. Das ist " + message;
+    disableQuizElements(true)
   } else {
     document.getElementById("quizbutton").innerText = "Starten";
     document.getElementById("questions").style.display = "none";
@@ -19,11 +22,68 @@ function quizbutton() {
 }
 
 function berechnePunkte() {
-  return 0;
+  let points = 0;
+  if (document.getElementById("f1a3").checked) points++;
+
+  if (document.getElementById("f2a1").checked) points++;
+
+  if (document.getElementById("f3a2").checked) points++;
+
+  if (document.getElementById("f4a1").checked) points++;
+  if (document.getElementById("f4a4").checked) points++;
+  if (document.getElementById("f4a3").checked) points--;
+  if (document.getElementById("f4a2").checked) points--;
+
+  if (document.getElementById("f5a1").checked) points++;
+  if (document.getElementById("f5a3").checked) points++;
+  if (document.getElementById("f5a4").checked) points++;
+  if (document.getElementById("f5a2").checked) points--;
+
+  if (document.getElementById("f6").value == "a") points++;
+  if (document.getElementById("f7").value == "a") points++;
+
+  if (document.getElementById("f8").value == 1) points++;
+  if (document.getElementById("f9").value == 10) points++;
+  if (document.getElementById("f10").value == 100) points++;
+  return points;
+}
+
+function disableQuizElements(disabled) {
+  document.getElementById("f1a1").disabled = disabled;
+  document.getElementById("f1a2").disabled = disabled;
+  document.getElementById("f1a3").disabled = disabled;
+  document.getElementById("f1a4").disabled = disabled;
+  document.getElementById("f2a1").disabled = disabled;
+  document.getElementById("f2a2").disabled = disabled;
+  document.getElementById("f2a3").disabled = disabled;
+  document.getElementById("f2a4").disabled = disabled;
+  document.getElementById("f3a1").disabled = disabled;
+  document.getElementById("f3a2").disabled = disabled;
+  document.getElementById("f3a3").disabled = disabled;
+  document.getElementById("f3a4").disabled = disabled;
+  document.getElementById("f4a1").disabled = disabled;
+  document.getElementById("f4a2").disabled = disabled;
+  document.getElementById("f4a3").disabled = disabled;
+  document.getElementById("f4a4").disabled = disabled;
+  document.getElementById("f5a1").disabled = disabled;
+  document.getElementById("f5a2").disabled = disabled;
+  document.getElementById("f5a3").disabled = disabled;
+  document.getElementById("f5a4").disabled = disabled;
+  document.getElementById("f6").disabled = disabled;
+  document.getElementById("f7").disabled = disabled;
+  document.getElementById("f8").disabled = disabled;
+  document.getElementById("f9").disabled = disabled;
+  document.getElementById("f10").disabled = disabled;
 }
 
 function nachricht(x) {
   switch (x) {
+    case -1:
+      return "...";
+    case -2:
+      return "...";
+    case -3:
+      return "...";
     case 0:
       return "katastrophal. Selbst mit Zufall hätte man besser antworten können.";
     case 1:
@@ -56,8 +116,13 @@ function nachricht(x) {
 }
 
 // ------- Ranges aktualisieren --------
+//aktualisiere am Anfang
+rangeValue();
 function rangeValue() {
-  document.getElementById("rangeValue").innerHTML = document.getElementById("range1").value;
+  document.getElementById("rangeValue1").innerHTML = document.getElementById("size").value;
+  document.getElementById("rangeValue2").innerHTML = document.getElementById("f8").value;
+  document.getElementById("rangeValue3").innerHTML = document.getElementById("f9").value;
+  document.getElementById("rangeValue4").innerHTML = document.getElementById("f10").value;
 }
 
 // ------- Einstellungen-Buttons -------
