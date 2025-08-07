@@ -131,12 +131,12 @@ function neueSchriftgroesse(standard) {
   if (standard) {
     size = "26px"
   } else {
-    size = document.getElementById("range1").value + "px";
+    size = document.getElementById("size").value + "px";
   }
 
-  //Klassennamen geben ein Array zurück
   let blockArray = document.getElementsByClassName("block");
   for (let i = 0; i < blockArray.length; i++) {
+    console.log(size);
     blockArray[i].style.fontSize = size;
   }
 
