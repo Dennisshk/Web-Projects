@@ -218,9 +218,9 @@ button:active {
 
 /*Block innerhalb eines Gebiets*/
 
-/*Vielleicht width zu klein, Ausgeklammerte besser?*/
+/*Vielleicht width zu groß, wenn asides nicht mehr an der Seite, sondern unten sind. Auskommentierte könnten besser sein*/
 .block {
-  /*width: 56%;*/
+  /*width: 55%;*/
   width: 60%;
   padding: 35px;
   padding-left: 29px;
@@ -237,14 +237,14 @@ button:active {
 }
 
 .littleBlock {
-  /*width: 31%;*/
-  width: 30%;
+  /*width: 29%;*/
+  width: 31%;
   font-family: "Open Sans", sans-serif;
 }
 
 .bigBlock {
-  /*width: 98%;*/
-  width: 96%;
+  /*width: 96%;*/
+  width: 98%;
   font-family: "Open Sans", sans-serif;
 }
 
