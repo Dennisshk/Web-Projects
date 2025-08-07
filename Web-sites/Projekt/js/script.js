@@ -200,7 +200,7 @@ function design() {
     document.querySelectorAll(".icon-bar a").forEach(e => {
       e.style.color = "rgb(178, 174, 202)";
     });
-    //Accordion wiedeer richtige Farbe
+    //Accordion wieder richtige Farbe
     document.querySelectorAll(".accordion").forEach(e=>{
       e.style.color= "#104720";
       e.style.background.color="#b4cac8";
