@@ -191,9 +191,9 @@ li {
 }
 
 input, button{
-  background-color: #b4cac8;
-  color: #104720;
-  border: 2px solid #7baec9;
+  background-color: #b4b8ca;
+  color: #040105;
+  border: 2px solid #212b46;
 }
 button{
   cursor: pointer;
@@ -207,7 +207,7 @@ label{
 /*Copilots eingedrückter Button*/
 button:hover,
 button:active {
-  background-color: #7baec9; 
+  background-color: #8893b9; 
   box-shadow: inset 2px 2px 6px #4a6a80; 
   transform: translateY(2px); 
   border-color: #4a6a80;  
@@ -267,7 +267,7 @@ button:active {
 #bild1 {
   /*Später in % angeben?*/
   width: 100%;
-  height: 350px;
+
 }
 
 #bild2 {

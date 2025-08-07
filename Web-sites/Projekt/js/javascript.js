@@ -167,13 +167,18 @@ function design() {
     });
 
     document.querySelectorAll("button, input").forEach(e => {
-      e.style.backgroundColor = "#b4cac8";
-      e.style.color = "#104720";
-      e.style.borderColor = "#7baec9";
+      e.style.backgroundColor = "#b4b8ca";
+      e.style.color = "#040105";
+      e.style.borderColor = "#212b46";
     });
 
     document.querySelectorAll(".icon-bar a").forEach(e => {
       e.style.color = "rgb(178, 174, 202)";
+    });
+    //Accordion wiedeer richtige Farbe
+    document.querySelectorAll(".accordion").forEach(e=>{
+      e.style.color= "#104720";
+      e.style.background.color="#b4cac8";
     });
 
   } else {
@@ -196,6 +201,11 @@ function design() {
     });
   }
 }
+
+
+
+
+
 
 //-------- w3Schools Accordion -----------
 var acc = document.getElementsByClassName("accordion");
