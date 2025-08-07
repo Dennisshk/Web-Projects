@@ -39,12 +39,12 @@ function berechnePunkte() {
   if (document.getElementById("f5a4").checked) points++;
   if (document.getElementById("f5a2").checked) points--;
 
-  if (document.getElementById("f6").value == "a") points++;
-  if (document.getElementById("f7").value == "a") points++;
+  if (document.getElementById("f6").value.toLowerCase() == "amazonas-flussdelfin" || document.getElementById("f6").value.toLowerCase() == "ganges-delfin") points++;
+  if (document.getElementById("f7").value.toLowerCase() == "schule") points++;
 
-  if (document.getElementById("f8").value == 1) points++;
-  if (document.getElementById("f9").value == 10) points++;
-  if (document.getElementById("f10").value == 100) points++;
+  if (document.getElementById("f8").value == 20) points++;
+  if (document.getElementById("f9").value == 55) points++;
+  if (document.getElementById("f10").value == 40) points++;
   return points;
 }
 
