@@ -64,6 +64,7 @@
   background-color: #b4cac8;
   color: #104720;
 }
+/*Anfangs grünlich, danach bläulicher*/
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 .activeAccordion,
@@ -216,7 +217,10 @@ button:active {
 /* ---------Klassen Deklarationen---------- */
 
 /*Block innerhalb eines Gebiets*/
+
+/*Vielleicht width zu klein, Ausgeklammerte besser?*/
 .block {
+  /*width: 56%;*/
   width: 60%;
   padding: 35px;
   padding-left: 29px;
@@ -233,12 +237,14 @@ button:active {
 }
 
 .littleBlock {
-  width: 31%;
+  /*width: 31%;*/
+  width: 30%;
   font-family: "Open Sans", sans-serif;
 }
 
 .bigBlock {
-  width: 98%;
+  /*width: 98%;*/
+  width: 96%;
   font-family: "Open Sans", sans-serif;
 }
 
