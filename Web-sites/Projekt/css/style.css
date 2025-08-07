@@ -281,6 +281,10 @@ button:active {
   height: 350px;
 }
 
+#wechselBild{
+  width: 500px;
+}
+
 #questions{
   display: none;
 }

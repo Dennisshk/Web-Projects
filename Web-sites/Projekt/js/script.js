@@ -115,6 +115,31 @@ function nachricht(x) {
   }
 }
 
+
+// ------- Bild bearbeiten --------
+function picture(next){
+
+}
+function size(bigger){
+  let size = document.getElementById("wechselBild").style.width;
+  //Standardwert, falls Width nicht gesetzt ist
+  if(!size){
+    size = document.getElementById("wechselBild").offsetWidth;
+  }
+  size = parseInt(size);
+  if (isNaN(size)) size = 200;
+
+
+  if(bigger){
+    size = size+5;
+  }else{
+     size = size-5;
+  }
+  if(size>200 && size <700)document.getElementById("wechselBild").style.width = size+"px";
+}
+
+
+
 // ------- Ranges aktualisieren --------
 //aktualisiere am Anfang
 rangeValue();

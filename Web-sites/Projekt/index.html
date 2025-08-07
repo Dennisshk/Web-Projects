@@ -115,11 +115,13 @@
         Kommunikation stören kann.
       </div>
       <aside class="block littleBlock">
-        <h3>Verschiedene Lebensräume</h3>
-        <img src="img/dummy.jpg" alt="Dummy-Bild">
+        <h3>Bilder</h3>
+        <img src="img/AuswahlBilder/Bild1.jpg" alt="Dummy-Bild" id="wechselBild">
         <br>
-        <button>Vorheriges Bild</button>
-        <button>Nächstes Bild</button>
+        <button onclick="picture(true)">Vorheriges Bild</button>
+        <button onclick="picture(false)">Nächstes Bild</button>
+        <button onclick="size(true)">Größer</button>
+        <button onclick="size(false)">Kleiner</button>
       </aside>
       <div class="block bigBlock">
         <h2>Ernährung</h2>
@@ -128,10 +130,10 @@
         spezialisieren sich auf Tintenfische oder Krustentiere. Orcas, die größten Vertreter der Delfine, fressen sogar
         Robben oder andere Meeressäuger.
         Delfine jagen häufig im Team: Sie kreisen Fischschwärme ein, treiben Beute mit Luftblasen zusammen oder nutzen
-        Schall, um ihre Umgebung per Echoortung präzise zu erfassen. Manche Delfine benutzen sogar Werkzeuge – wie
+        Schall, um ihre Umgebung per Echoortung präzise zu erfassen. Manche Delfine benutzen sogar Werkzeuge, wie
         Meeresschwämme, um Beutetiere im Sand aufzuspüren. Die Art der Jagd ist oft an den Lebensraum angepasst und in
         vielen Fällen auch innerhalb der Delfingruppe erlernt.
-        Diese beeindruckenden Techniken zeigen, wie intelligent Delfine sind – und wie wichtig ein funktionierendes
+        Diese beeindruckenden Techniken zeigen, wie intelligent Delfine sind und wie wichtig ein funktionierendes
         Ökosystem für ihre Ernährung ist.
       </div>
     </section>
@@ -168,7 +170,7 @@
         <input type="radio" name="auswahl">
         <button>1</button>
         <button>Zurücksetzen</button>
-        <ul>
+        <ul> <!---Switch Funktion, Select Box-->
           <li><a href="https://www.google.de">Google</a></li>
           <li><a href="https://www.google.de">Google</a></li>
           <li><a href="https://www.google.de">Google</a></li>
@@ -393,7 +395,7 @@ Entdeckungsstatus: Gut erforscht-->
           <article>
             <h4>Frage9: Wie schnell können manche Delfine schwimmen?</h4>
             <input id="f9" type="range" min="10" max="100" onchange="rangeValue()"><span id="rangeValue3"></span>
-            <spa> km/h</spa><!---55-->
+            <span> km/h</span><!---55-->
           </article>
           <article>
             <h4>Frage10: Wie viele Delfinarten gibt es etwa?</h4>
@@ -405,6 +407,7 @@ Entdeckungsstatus: Gut erforscht-->
           <h2 id="quiztitel">Quiz</h2>
           <button onclick="quizbutton()" id="quizbutton">Starten</button>
           <p id="ergebnis"></p>
+          <!--Gif dazu-->
         </article>
       </div>
 
@@ -412,6 +415,7 @@ Entdeckungsstatus: Gut erforscht-->
       <div class="block bigBlock">
         <h2>Irgendwas</h2>
       </div>
+
       <div class="block bigBlock">
         <h2>Mehr Infos zu Delfinen?</h2>
         <!---Select mit intereesiertem Bereich, 3 Links passen sich an-->
