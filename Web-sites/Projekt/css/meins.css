@@ -127,7 +127,7 @@ header {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
-  gap: 10px;
+  gap: 50px;
   /*grid-area: 1/1/2/3;*/
 }
 
