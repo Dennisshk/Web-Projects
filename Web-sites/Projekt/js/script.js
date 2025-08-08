@@ -137,7 +137,7 @@ function picture(next) {
       break;
     case 2:
       alt = "schwimmende Delfine";
-      beschreibung = "Delfine leben immer in gruppen. Alleine sieht man sie selten";
+      beschreibung = "Delfine leben immer in Gruppen. Alleine sieht man sie selten";
       break;
     case 3:
       alt = "drei Delfine";
