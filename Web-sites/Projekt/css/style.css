@@ -177,6 +177,7 @@ footer {
 
 figcaption{
   font-size: 18px;
+  text-align: justify;
 }
 
 article {
@@ -282,6 +283,12 @@ button:active {
 #bild2 {
   width: 100%;
   height: 350px;
+}
+
+#bild3{
+  color: rgb(0, 0, 0);
+  width: 400px;
+  font-size: 22px;
 }
 
 #wechselBild{

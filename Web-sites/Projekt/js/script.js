@@ -121,10 +121,10 @@ function picture(next) {
   let index = document.getElementById("wechselBildRange").value;
   if (next) {
     index++;
-    if (index == 5) index = 1;
+    if (index == 6) index = 1;
   } else {
     index--;
-    if (index == 0) index = 4;
+    if (index == 0) index = 5;
   }
   document.getElementById("wechselBildRange").value = index;
   document.getElementById("wechselBild").src = "img/AuswahlBilder/Bild" + index + ".jpg";
@@ -146,6 +146,10 @@ function picture(next) {
     case 4:
       alt = "Viele springende Delfine";
       beschreibung = "Delfine können sehr hoch aus dem Wasser springen";
+      break;
+    case 5:
+      alt = "Delfin mit Delfin-Baby";
+      beschreibung = "Delfine kümmern sich gut um ihre Babys";
       break;
     default:
       alt="";
@@ -247,6 +251,8 @@ function design() {
       e.style.background.color = "#b4cac8";
     });
 
+    document.getElementById("bild3").style.color="#000000ff";
+
   } else {
 
     document.body.style.background = "#222"
@@ -265,6 +271,8 @@ function design() {
     document.querySelectorAll(".icon-bar a").forEach(e => {
       e.style.color = "#b2b2b8";
     });
+
+    document.getElementById("bild3").style.color="#7877a0ff";
   }
 }
 
