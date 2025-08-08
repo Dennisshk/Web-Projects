@@ -16,7 +16,7 @@ function quizbutton() {
   } else {
     document.getElementById("quizbutton").innerText = "Starten";
     document.getElementById("questions").style.display = "none";
-    document.getElementById("quiztitel").innerHTML = "Quiz";
+    document.getElementById("quiztitel").innerHTML = "Teste hier dein <br> Wissen über Delfine.";
     document.getElementById("ergebnis").innerHTML = "";
   }
 }

@@ -6,6 +6,7 @@ Filter Dings
 Quiz mit Gifs machen
 2 weitere Funktionen
 footer
+Feedback Funktion?
 accordion fix?-->
 
 <head>
@@ -51,14 +52,16 @@ accordion fix?-->
         </div>
         <div>
           <h3>Schriftgröße</h3>
-          <input id="size" type="range" min="10" max="50" value="26" onchange="rangeValue()"><span id="rangeValue1"></span>
+          <input id="size" type="range" min="10" max="50" value="26" onchange="rangeValue()"><span
+            id="rangeValue1"></span>
           <br><br>
           <button onclick="neueSchriftgroesse(false)">Anwenden</button><br><br><button
             onclick="neueSchriftgroesse(true)">Standard</button>
         </div>
         <div>
           <h3>Format</h3>
-          <p>Sollten die Blöcke "Einleitung" und "Paar Fakten" untereinander statt <br> nebeneinander erscheinen, sollte dieser Wert reduziert werden:</p>
+          <p>Sollten die Blöcke "Einleitung" und "Paar Fakten" untereinander statt <br> nebeneinander erscheinen, sollte
+            dieser Wert reduziert werden:</p>
           <input id="widht" type="range" min="50" max="60" onchange="rangeValue()"><span id="rangeValue5"></span><br>
           <button onclick="changeWidht()">Anwenden</button>
         </div>
@@ -140,12 +143,12 @@ accordion fix?-->
         <button onclick="size(true)">Größer</button>
         <button onclick="size(false)">Kleiner</button>
         <br><br>
-        <figure>
+        <div>
           <img src="img/AuswahlBilder/Bild1.jpg" alt="Delfin mit Delfin-Baby" id="wechselBild">
-          <figcaption id="wechselBildText">Delfine kümmern sich gut um ihre Babys</figcaption>
+          <p id="wechselBildText">Delfine kümmern sich gut um ihre Babys</p>
           <br>
           <input type="range" min="1" max="5" value="1" id="wechselBildRange" disabled>
-        </figure>
+        </div>
       </aside>
       <div class="block bigBlock">
         <h2>Ernährung</h2>
@@ -180,42 +183,80 @@ accordion fix?-->
     <section id="navInfos2">
       <div class="block littleBlock">
         <h2>Delfinarten im Überblick</h2>
-        Es gibt über 40 bekannte Delfinarten, darunter bekannte wie der Große Tümmler, der Gemeine Delfin oder der Orca
-        , auch als Schwertwal bekannt, obwohl er zur Familie der Delfine gehört. Jede Art hat eigene Merkmale, was
-        Größe, Farbe, Verhalten und Lebensraum betrifft. Manche leben bevorzugt im offenen Meer, andere nahe an der
-        Küste. Einige, wie der Irrawaddy-Delfin, sind sogar im Süßwasser zu Hause. Es lohnt sich, die Arten zu
-        vergleichen.
+        Es gibt über <strong>40 Delfinarten</strong>, darunter bekannte wie der Große Tümmler, der Gemeine Delfin oder
+        der <strong>Orca</strong>, auch als Schwertwal bekannt, obwohl er zur Familie der Delfine gehört. Jede Art hat
+        eigene Merkmale, was Größe, Farbe, Verhalten und <strong>Lebensraum</strong> betrifft. Manche leben bevorzugt im
+        offenen Meer, andere nahe an der Küste. Einige, wie der <strong>Irrawaddy-Delfin</strong>, sind sogar im
+        Süßwasser zu Hause. Es lohnt sich, die Arten zu vergleichen.
       </div>
       <div class="block littleBlock">
         <h2> Vielfalt und Besonderheiten</h2>
         Delfine unterscheiden sich nicht nur im Aussehen, sondern auch in Verhalten, Lebensraum und sozialen Strukturen.
         Während manche Arten, wie der Große Tümmler, weltweit bekannt und gut erforscht sind, leben andere wie der
-        Irawadi- oder Ganges-Delfin in spezifischen Süßwasserregionen und sind stark gefährdet. Auch die Größe variiert
-        stark. Manche Arten zeichnen sich durch auffällige
-        Färbungen oder besondere Jagdtechniken aus. Einige Delfine wurden erst in den letzten
-        Jahren wissenschaftlich beschrieben.
+        Irawadi- oder <strong>Ganges-Delfin</strong> in spezifischen Süßwasserregionen und sind stark gefährdet. Auch
+        die Größe variiert stark. Manche Arten zeichnen sich durch auffällige Färbungen oder besondere
+        <strong>Jagdtechniken</strong> aus. Einige Delfine wurden erst in den letzten Jahren wissenschaftlich
+        beschrieben.
       </div>
       <figure>
         <img src="img/InfoBox2.jpg" alt="Vom Menschen gefütterter Delfin" id="bild2">
-        <figcaption id="bild3">Ein Delfin taucht aus dem Wasser auf und öffnet neugierig sein Maul, während eine Person ihn sanft
+        <figcaption id="bild3">Ein Delfin taucht aus dem Wasser auf und öffnet neugierig sein Maul, während eine Person
+          ihn sanft
           per Hand mit einem Fisch füttert. Man erkennt die enge Verbindung zwischen Mensch und Tier sowie das
           Vertrauen, das der Delfin zeigt.</figcaption>
       </figure>
       <div class="block bigBlock">
         <h3>Die verschiedenen Arten</h3>
-        <input type="text" placeholder="1">
-        <input type="text" placeholder="2">
-        <input type="radio" name="auswahl">
-        <input type="radio" name="auswahl">
-        <input type="radio" name="auswahl">
-        <button>1</button>
-        <button>Zurücksetzen</button>
-        <ul> <!---Switch Funktion, Select Box-->
-          <li><a href="https://www.google.de">Google</a></li>
-          <li><a href="https://www.google.de">Google</a></li>
-          <li><a href="https://www.google.de">Google</a></li>
-          <li><a href="https://www.google.de">Google</a></li>
-        </ul>
+
+        <h5>Filter</h5>
+        <div id="filterdiv">
+          <!---<input type="text" placeholder="1"><input type="text" placeholder="2">-->
+          <div class="filterElement">
+            <p>Lebensraum:</p>
+            <select id="fi" onchange="filter()">
+              <option value="alle">Alle</option>
+              <option value="gefährdet">Gefährdet</option>
+              <option value="nicht gefährdet">Nicht gefährdet</option>
+              <option value="süßwasser">Süßwasser</option>
+              <option value="küste">Küste</option>
+              <option value="hochsee">Hochsee</option>
+            </select>
+          </div>
+          <div class="filterElement">
+            <p>Lebensraum:</p>
+            <select id="f" onchange="filter()">
+              <option value="alle">Alle</option>
+              <option value="gefährdet">Gefährdet</option>
+              <option value="nicht gefährdet">Nicht gefährdet</option>
+              <option value="süßwasser">Süßwasser</option>
+              <option value="küste">Küste</option>
+              <option value="hochsee">Hochsee</option>
+            </select>
+          </div>
+          <div class="filterElement">
+            <p>Lebensraum:</p>
+            <select id="" onchange="filter()">
+              <option value="alle">Alle</option>
+              <option value="gefährdet">Gefährdet</option>
+              <option value="nicht gefährdet">Nicht gefährdet</option>
+              <option value="süßwasser">Süßwasser</option>
+              <option value="küste">Küste</option>
+              <option value="hochsee">Hochsee</option>
+            </select>
+          </div>
+          <div class="filterElement">
+            <input type="radio" name="auswahl">
+            <input type="radio" name="auswahl">
+          </div>
+        </div>
+
+        <p>Aktive Filter: keine</p>
+        <button>Anwenden</button>
+        <button>alle Zurücksetzen</button>
+
+        <br><br><br><br>
+
+        <h3>Artenliste:</h3>
         <!---Großer Tümmler
 Lebensraum: Küste, Hochsee
 Größe: Mittel
@@ -365,8 +406,8 @@ Entdeckungsstatus: Gut erforscht-->
 
     <section id="navInt">
       <div class="block bigBlock">
+        <h2>Quiz</h2>
         <div id="questions">
-          <h2>Quiz</h2>
           <article>
             <h4>Frage1: Wie atmen Delfine?</h4>
             <ol type="A">
@@ -429,12 +470,14 @@ Entdeckungsstatus: Gut erforscht-->
           </article>
           <article>
             <h4>Frage8: Wie hoch ist die Lebenserwartung eines Delfins?</h4>
-            <input id="f8" type="range" min="1" value="1" max="50" onchange="rangeValue()"><span id="rangeValue2"></span><span>
+            <input id="f8" type="range" min="1" value="1" max="50" onchange="rangeValue()"><span
+              id="rangeValue2"></span><span>
               Jahre</span><!---20-->
           </article>
           <article>
             <h4>Frage9: Wie schnell können manche Delfine schwimmen?</h4>
-            <input id="f9" type="range" min="10" value="10" max="100" onchange="rangeValue()"><span id="rangeValue3"></span>
+            <input id="f9" type="range" min="10" value="10" max="100" onchange="rangeValue()"><span
+              id="rangeValue3"></span>
             <span> km/h</span><!---55-->
           </article>
           <article>
@@ -444,7 +487,7 @@ Entdeckungsstatus: Gut erforscht-->
           </article>
         </div>
         <article>
-          <h2 id="quiztitel">Quiz</h2>
+          <h2 id="quiztitel">Teste hier dein <br> Wissen über Delfine.</h2>
           <button onclick="quizbutton()" id="quizbutton">Starten</button>
           <p id="ergebnis"></p>
           <!--Gif dazu-->
@@ -459,6 +502,12 @@ Entdeckungsstatus: Gut erforscht-->
       <div class="block bigBlock">
         <h2>Mehr Infos zu Delfinen?</h2>
         <!---Select mit intereesiertem Bereich, 3 Links passen sich an-->
+        <ul> <!---Switch Funktion, Select Box-->
+          <li><a href="https://www.google.de">Google</a></li>
+          <li><a href="https://www.google.de">Google</a></li>
+          <li><a href="https://www.google.de">Google</a></li>
+          <li><a href="https://www.google.de">Google</a></li>
+        </ul>
       </div>
     </section>
 

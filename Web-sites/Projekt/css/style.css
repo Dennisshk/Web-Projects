@@ -258,6 +258,13 @@ button:active {
   cursor: pointer;
 }
 
+.filterElement{
+  background-color: #5057a6;
+  margin-left: 7px;
+  margin-bottom: 20px;
+  padding: 15px;
+}
+
 /* ----------Identifier Deklaration---------- */
 
 #settingsBlock {
@@ -300,6 +307,13 @@ button:active {
 #quizbutton{
   font-size: 25px;
   padding: 3px;
+}
+
+#filterdiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  gap: 50px;
 }
 
 #rangeValue1,
