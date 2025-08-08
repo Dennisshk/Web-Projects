@@ -2,7 +2,6 @@
 <html lang="de">
 
 <!--todo:  //Zum Auslesen von Checkboxen musst Du die ausgewählten Elemente in einem Array speichern.(Quiz)
-Bild in Info2
 Filter Dings
 width statt Sprache
 Quiz mit Gifs machen
@@ -44,12 +43,6 @@ accordion fix?-->
     <div class="panel">
       <div id="settings">
         <div>
-          <h3>Sprache ändern</h3><br>
-          <button>Deutsch</button>
-          <br><br>
-          <button>Englisch</button>
-        </div>
-        <div>
           <h3>Design</h3><br>
           <input onclick="design()" type="radio" name="design" id="hell" value="hell" checked><label
             for="hell">Hell</label>
@@ -59,10 +52,16 @@ accordion fix?-->
         </div>
         <div>
           <h3>Schriftgröße</h3>
-          <input id="size" type="range" min="10" max="40" onchange="rangeValue()"><span id="rangeValue1"></span>
+          <input id="size" type="range" min="10" max="50" value="26" onchange="rangeValue()"><span id="rangeValue1"></span>
           <br><br>
           <button onclick="neueSchriftgroesse(false)">Anwenden</button><br><br><button
             onclick="neueSchriftgroesse(true)">Standard</button>
+        </div>
+        <div>
+          <h3>Format</h3>
+          <p>Sollten die Blöcke "Einleitung" und "Paar Fakten" untereinander statt <br> nebeneinander erscheinen, sollte dieser Wert reduziert werden:</p>
+          <input id="widht" type="range" min="50" max="60" onchange="rangeValue()"><span id="rangeValue5"></span><br>
+          <button onclick="changeWidht()">Anwenden</button>
         </div>
         <div>
           <h3>Navigation</h3><br>
@@ -432,17 +431,17 @@ Entdeckungsstatus: Gut erforscht-->
           </article>
           <article>
             <h4>Frage8: Wie hoch ist die Lebenserwartung eines Delfins?</h4>
-            <input id="f8" type="range" min="1" max="50" onchange="rangeValue()"><span id="rangeValue2"></span><span>
+            <input id="f8" type="range" min="1" value="1" max="50" onchange="rangeValue()"><span id="rangeValue2"></span><span>
               Jahre</span><!---20-->
           </article>
           <article>
             <h4>Frage9: Wie schnell können manche Delfine schwimmen?</h4>
-            <input id="f9" type="range" min="10" max="100" onchange="rangeValue()"><span id="rangeValue3"></span>
+            <input id="f9" type="range" min="10" value="10" max="100" onchange="rangeValue()"><span id="rangeValue3"></span>
             <span> km/h</span><!---55-->
           </article>
           <article>
             <h4>Frage10: Wie viele Delfinarten gibt es etwa?</h4>
-            <input id="f10" type="range" min="30" max="70" onchange="rangeValue()"><span
+            <input id="f10" type="range" min="30" value="30" max="70" onchange="rangeValue()"><span
               id="rangeValue4"></span><!---40-->
           </article>
         </div>

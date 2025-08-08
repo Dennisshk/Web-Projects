@@ -224,7 +224,6 @@ button:active {
 
 /*Vielleicht width zu groß, wenn asides nicht mehr an der Seite, sondern unten sind. Auskommentierte könnten besser sein*/
 .block {
-  /*width: 55%;*/
   width: 60%;
   padding: 35px;
   padding-left: 29px;
@@ -241,7 +240,6 @@ button:active {
 }
 
 .littleBlock {
-  /*width: 29%;*/
   width: 31%;
   font-family: "Open Sans", sans-serif;
 }

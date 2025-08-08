@@ -193,6 +193,7 @@ function rangeValue() {
   document.getElementById("rangeValue2").innerHTML = document.getElementById("f8").value;
   document.getElementById("rangeValue3").innerHTML = document.getElementById("f9").value;
   document.getElementById("rangeValue4").innerHTML = document.getElementById("f10").value;
+  document.getElementById("rangeValue5").innerHTML = document.getElementById("widht").value;
 }
 
 // ------- Einstellungen-Buttons -------
@@ -222,6 +223,23 @@ function navbar() {
     document.getElementsByClassName("icon-bar")[0].style.position = "sticky"
   } else {
     document.getElementsByClassName("icon-bar")[0].style.position = "static"
+  }
+}
+
+
+function changeWidht(){
+  let widht = document.getElementById("widht").value;
+  let blocks = document.getElementsByClassName("block");
+  for(let i = 0; i < blocks.length; i++){
+    blocks[i].style.width = widht + "%";
+  }
+  let lBlocks = document.getElementsByClassName("littleBlock");
+  for(let i = 0; i < lBlocks.length; i++){
+    lBlocks[i].style.width = (widht / 2 + 1) + "%";
+  }
+  let bBlocks = document.getElementsByClassName("bigBlock");
+  for(let i = 0; i < bBlocks.length; i++){
+    bBlocks[i].style.width = (widht * 1.5 + 8) + "%";
   }
 }
 
