@@ -79,11 +79,11 @@ function disableQuizElements(disabled) {
 function nachricht(x) {
   switch (x) {
     case -1:
-      return "...";
+      return "traurig.";
     case -2:
-      return "...";
+      return "traurig.";
     case -3:
-      return "...";
+      return "traurig.";
     case 0:
       return "katastrophal. Selbst mit Zufall hätte man besser antworten können.";
     case 1:
@@ -145,7 +145,7 @@ function picture(next) {
       break;
     case 4:
       alt = "Viele springende Delfine";
-      beschreibung = "Delfine können sehr hoch aus dem Wasser springen.";
+      beschreibung = "Delfine können sehr hoch aus dem Wasser springen";
       break;
     default:
       alt="";
