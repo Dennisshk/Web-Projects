@@ -213,7 +213,7 @@ accordion fix?-->
           <!---<input type="text" placeholder="1"><input type="text" placeholder="2">-->
           <div class="filterElement">
             <p>Lebensraum:</p>
-            <select id="fi" onchange="filter()">
+            <select class="filter">
               <option value="alle">Alle</option>
               <option value="gefährdet">Gefährdet</option>
               <option value="nicht gefährdet">Nicht gefährdet</option>
@@ -224,7 +224,7 @@ accordion fix?-->
           </div>
           <div class="filterElement">
             <p>Lebensraum:</p>
-            <select id="f" onchange="filter()">
+            <select class="filter">
               <option value="alle">Alle</option>
               <option value="gefährdet">Gefährdet</option>
               <option value="nicht gefährdet">Nicht gefährdet</option>
@@ -235,7 +235,7 @@ accordion fix?-->
           </div>
           <div class="filterElement">
             <p>Lebensraum:</p>
-            <select id="" onchange="filter()">
+            <select class="filter">
               <option value="alle">Alle</option>
               <option value="gefährdet">Gefährdet</option>
               <option value="nicht gefährdet">Nicht gefährdet</option>
@@ -257,7 +257,81 @@ accordion fix?-->
         <br><br><br><br>
 
         <h3>Artenliste:</h3>
-        <!---Großer Tümmler
+        <!---
+        
+        Lebensraum:
+
+    Ozean (offenes Meer)
+
+    Küstennah
+
+    Fluss / Süßwasser
+
+    Tropisch
+
+    Subtropisch
+
+    Gemäßigt
+
+    Kaltwasser
+
+ Körpergröße:
+
+    Klein (unter 2 m)
+
+    Mittel (2–4 m)
+
+    Groß (über 4 m)
+
+
+ Verhalten:
+
+    Einzelgängerisch
+
+    In Gruppen / Schulen
+
+    Spielerisch
+
+    Hochintelligent
+
+    Werkzeugnutzung
+
+✅ Gefährdung:
+
+    Nicht gefährdet
+
+    Gefährdet
+
+    Stark gefährdet
+
+    Vom Aussterben bedroht
+
+✅ Bekanntheit:
+
+    Weltweit bekannt
+
+    Weniger bekannt
+
+    Kaum erforscht
+
+✅ Kommunikation:
+
+    Echoortung
+
+    Individueller Pfeifton
+
+    Komplexe Soziallaute
+
+Besonderheiten:    Schwertartige Finne (z. B. Orca)    Flussschnauze (z. B. Gangesdelfin)  Rundkopf (z. B. Beluga oder Irrawaddy) Zahnanzahl variierend
+
+Fortbewegung:  Sehr schnell (über 40 km/h)    Durchschnittlich (20–30 km/h) Gemächlich (besonders Flussdelfine)
+
+Sozialstruktur:  Stark ausgeprägt Mittel ausgeprägt Gering
+        
+
+        
+        
+        Großer Tümmler
 Lebensraum: Küste, Hochsee
 Größe: Mittel
 Gefährdung: Nicht gefährdet
@@ -501,6 +575,15 @@ Entdeckungsstatus: Gut erforscht-->
 
       <div class="block bigBlock">
         <h2>Mehr Infos zu Delfinen?</h2>
+
+        <select id="Interesse">
+              <option value="alle">Alle</option>
+              <option value="gefährdet">Gefährdet</option>
+              <option value="nicht gefährdet">Nicht gefährdet</option>
+              <option value="süßwasser">Süßwasser</option>
+              <option value="küste">Küste</option>
+              <option value="hochsee">Hochsee</option>
+            </select>
         <!---Select mit intereesiertem Bereich, 3 Links passen sich an-->
         <ul> <!---Switch Funktion, Select Box-->
           <li><a href="https://www.google.de">Google</a></li>
