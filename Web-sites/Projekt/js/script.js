@@ -127,13 +127,14 @@ function picture(next) {
     if (index == 0) index = 5;
   }
   document.getElementById("wechselBildRange").value = index;
+  console.log(index);
   document.getElementById("wechselBild").src = "img/AuswahlBilder/Bild" + index + ".jpg";
   let beschreibung;
   let alt;
   switch (index) {
-    case 5:
-      alt = "springender Delfin";
-      beschreibung = "Es sieht immer sehr schön aus, wenn Delfine aus dem Wasser springen";
+    case 1:
+      alt = "Delfin mit Delfin-Baby";
+      beschreibung = "Delfine kümmern sich gut um ihre Babys";
       break;
     case 2:
       alt = "schwimmende Delfine";
@@ -147,9 +148,9 @@ function picture(next) {
       alt = "Viele springende Delfine";
       beschreibung = "Delfine können sehr hoch aus dem Wasser springen";
       break;
-    case 1:
-      alt = "Delfin mit Delfin-Baby";
-      beschreibung = "Delfine kümmern sich gut um ihre Babys";
+    case 5:
+      alt = "springender Delfin";
+      beschreibung = "Es sieht immer sehr schön aus, wenn Delfine aus dem Wasser springen";
       break;
     default:
       alt="";

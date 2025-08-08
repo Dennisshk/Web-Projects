@@ -305,7 +305,8 @@ button:active {
 #rangeValue1,
 #rangeValue2,
 #rangeValue3,
-#rangeValue4{
+#rangeValue4,
+#rangeValue5{
   margin-left: 10px;
   margin-bottom: 44px;
   padding: 2px;
