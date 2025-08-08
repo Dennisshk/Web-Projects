@@ -131,7 +131,7 @@ function picture(next) {
   let beschreibung;
   let alt;
   switch (index) {
-    case 1:
+    case 5:
       alt = "springender Delfin";
       beschreibung = "Es sieht immer sehr schön aus, wenn Delfine aus dem Wasser springen";
       break;
@@ -147,7 +147,7 @@ function picture(next) {
       alt = "Viele springende Delfine";
       beschreibung = "Delfine können sehr hoch aus dem Wasser springen";
       break;
-    case 5:
+    case 1:
       alt = "Delfin mit Delfin-Baby";
       beschreibung = "Delfine kümmern sich gut um ihre Babys";
       break;
