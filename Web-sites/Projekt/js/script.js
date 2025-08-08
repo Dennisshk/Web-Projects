@@ -117,25 +117,66 @@ function nachricht(x) {
 
 
 // ------- Bild bearbeiten --------
-function picture(next){
-
+function picture(next) {
+  let index = document.getElementById("wechselBildRange").value;
+  if (next) {
+    index++;
+    if (index == 5) index = 1;
+  } else {
+    index--;
+    if (index == 0) index = 4;
+  }
+  document.getElementById("wechselBildRange").value = index;
+  document.getElementById("wechselBild").src = "img/AuswahlBilder/Bild" + index + ".jpg";
+  let beschreibung;
+  let alt;
+  switch (index) {
+    case 1:
+      alt = "springender Delfin";
+      beschreibung = "Es sieht immer sehr schön aus, wenn Delfine aus dem Wasser springen";
+      break;
+    case 2:
+      alt = "schwimmende Delfine";
+      beschreibung = "Delfine leben immer in gruppen. Alleine sieht man sie selten";
+      break;
+    case 3:
+      alt = "drei Delfine";
+      beschreibung = "Dies ist eine Schule von Delfinen";
+      break;
+    case 4:
+      alt = "Viele springende Delfine";
+      beschreibung = "Delfine können sehr hoch aus dem Wasser springen.";
+      break;
+    default:
+      alt="";
+      beschreibung="";
+  }
+  document.getElementById("wechselBild").alt = alt;
+  document.getElementById("wechselBildText").innerHTML = beschreibung;
 }
-function size(bigger){
+
+function size(bigger) {
   let size = document.getElementById("wechselBild").style.width;
   //Standardwert, falls Width nicht gesetzt ist
-  if(!size){
+  if (!size) {
     size = document.getElementById("wechselBild").offsetWidth;
   }
   size = parseInt(size);
   if (isNaN(size)) size = 200;
 
 
-  if(bigger){
-    size = size+5;
-  }else{
-     size = size-5;
+  if (bigger) {
+    size = size + 5;
+  } else {
+    size = size - 5;
   }
-  if(size>200 && size <700)document.getElementById("wechselBild").style.width = size+"px";
+  if (size < 200) {
+    alert("Minimale Größe erreicht.");
+  } else if (size > 700) {
+    alert("Maximale Größe erreicht.");
+  } else {
+    document.getElementById("wechselBild").style.width = size + "px";
+  }
 }
 
 
@@ -201,9 +242,9 @@ function design() {
       e.style.color = "rgb(178, 174, 202)";
     });
     //Accordion wieder richtige Farbe
-    document.querySelectorAll(".accordion").forEach(e=>{
-      e.style.color= "#104720";
-      e.style.background.color="#b4cac8";
+    document.querySelectorAll(".accordion").forEach(e => {
+      e.style.color = "#104720";
+      e.style.background.color = "#b4cac8";
     });
 
   } else {

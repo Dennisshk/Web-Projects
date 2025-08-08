@@ -175,6 +175,9 @@ footer {
   background-color: #6c74cb;
 }*/
 
+figcaption{
+  font-size: 18px;
+}
 
 article {
   width: 30%;

@@ -124,13 +124,17 @@ accordion fix-->
         Kommunikation stören kann.
       </div>
       <aside class="block littleBlock">
-        <h3>Bilder</h3> 
-        <button onclick="picture(true)">Vorheriges Bild</button>
-        <button onclick="picture(false)">Nächstes Bild</button>
+        <h3>Bilder</h3>
+        <button onclick="picture(false)">Vorheriges Bild</button>
+        <button onclick="picture(true)">Nächstes Bild</button>
         <button onclick="size(true)">Größer</button>
         <button onclick="size(false)">Kleiner</button>
         <br><br>
-        <img src="img/AuswahlBilder/Bild1.jpg" alt="Dummy-Bild" id="wechselBild">
+        <figure>
+          <img src="img/AuswahlBilder/Bild1.jpg" alt="springender Delfin" id="wechselBild">
+          <figcaption id="wechselBildText">Es sieht immer sehr schön aus, wenn Delfine aus dem Wasser springen</figcaption>
+          <input type="range" min="1" max="4" value="1" id="wechselBildRange" disabled>
+        </figure>
       </aside>
       <div class="block bigBlock">
         <h2>Ernährung</h2>
