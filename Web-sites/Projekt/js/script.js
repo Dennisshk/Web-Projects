@@ -130,6 +130,19 @@ function filtern() {
   let erf = getCheckedValue("erf");
   console.log(leben+groesse+gef+erf);
 
+  //Anzeige aktualisieren
+  if(leben == "Alle" && !groesse && !gef && !erf){
+    document.getElementById("filterAnzeige").innerHTML = "Keine";
+  }else{
+    let anzeige = "";
+    if(leben != "Alle") anzeige=anzeige + "Lebensraum ";
+    if(groesse) anzeige=anzeige + "Größe ";
+    if(gef) anzeige=anzeige + "Gefährdet ";
+    if(erf) anzeige=anzeige + "Entdeckungsstatus ";
+    document.getElementById("filterAnzeige").innerHTML = anzeige;
+  }
+
+
   // Alle Zeilen erst mal einblenden
   for (let i = 1; i < rows.length; i++) {
     rows[i].style.display = "";
