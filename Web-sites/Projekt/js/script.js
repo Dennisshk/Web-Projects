@@ -118,11 +118,25 @@ function nachricht(x) {
 
 // ------- Filterfunktion --------
 function filtern(){
+  let filter = document.getElementsByClassName("filterElement");
 
+
+  let rows = document.getElementsByClassName("art");
+  for(let i; i<rows.length;i++){
+
+  }
 }
 
-function filterDefault(){
-
+function filterDefault() {
+  document.getElementById("leben").value = "Alle";
+  var ids = ["g1","g2","g3","ge1","ge2","ge3","e1","e2","e3"];
+  for (var i = 0; i < ids.length; i++) {
+    var el = document.getElementById(ids[i]);
+    if (el) {
+      el.checked = false;
+    }
+  }
+  filtern();
 }
 
 
