@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="de">
 
-<!--todo:  //Zum Auslesen von Checkboxen musst Du die ausgewählten Elemente in einem Array speichern.(Quiz)
+<!--todo:  //Zum Auslesen von Checkboxen musst Du die ausgewählten Elemente in einem Array speichern.(Quiz,Filter)
 Filter Dings
 Quiz mit Gifs machen
 2 weitere Funktionen
@@ -257,223 +257,185 @@ accordion fix?-->
         <br><br><br><br>
 
         <h3>Artenliste:</h3>
-        <!---
-        
-        Lebensraum:
 
-    Ozean (offenes Meer)
+        <table id="arten">
+          <thead>
+            <tr>
+              <th>Art</th>
+              <th>Lebensraum</th>
+              <th>Größe</th>
+              <th>Gefährdung</th>
+              <th>Besonderheit</th>
+              <th>Soziales Verhalten</th>
+              <th>Fortbewegung</th>
+              <th>Entdeckungsstatus</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="art">
+              <td>Großer Tümmler</td>
+              <td>Küste, Hochsee</td>
+              <td>Mittel</td>
+              <td>Nicht gefährdet</td>
+              <td>Bekannt aus TV</td>
+              <td>Große Gruppen</td>
+              <td>Schnell und verspielt</td>
+              <td>Gut erforscht</td>
+            </tr>
+            <tr class="art">
+              <td>Gemeiner Delfin</td>
+              <td>Hochsee</td>
+              <td>Mittel</td>
+              <td>Nicht gefährdet</td>
+              <td>Schneller Schwimmer</td>
+              <td>Schwärme</td>
+              <td>Sehr schnell</td>
+              <td>Gut erforscht</td>
+            </tr>
+            <tr class="art">
+              <td>Orca (Schwertwal)</td>
+              <td>Weltweit</td>
+              <td>Groß</td>
+              <td>Nicht gefährdet</td>
+              <td>Größter Delfin</td>
+              <td>Familiengruppen</td>
+              <td>Kraftvoll</td>
+              <td>Sehr gut erforscht</td>
+            </tr>
+            <tr class="art">
+              <td>Irawadi-Delfin</td>
+              <td>Küste, Flüsse</td>
+              <td>Klein</td>
+              <td>Gefährdet</td>
+              <td>Rundkopf, Süßwasser</td>
+              <td>Kleine Gruppen</td>
+              <td>Gemächlich</td>
+              <td>Teilweise erforscht</td>
+            </tr>
+            <tr class="art">
+              <td>Amazonas-Flussdelfin</td>
+              <td>Flüsse</td>
+              <td>Mittel</td>
+              <td>Stark gefährdet</td>
+              <td>Rosa Farbe</td>
+              <td>Eher einzelgängerisch</td>
+              <td>Langsam, wendig</td>
+              <td>Gut erforscht</td>
+            </tr>
+            <tr class="art">
+              <td>Heaviside-Delfin</td>
+              <td>Küste Südafrika</td>
+              <td>Klein</td>
+              <td>Gefährdet</td>
+              <td>Scheu, selten</td>
+              <td>Kleine Gruppen</td>
+              <td>Vorsichtig</td>
+              <td>Wenig erforscht</td>
+            </tr>
+            <tr class="art">
+              <td>Weißseitendelfin</td>
+              <td>Nordatlantik</td>
+              <td>Mittel</td>
+              <td>Nicht gefährdet</td>
+              <td>Auffällige Färbung</td>
+              <td>Gruppen</td>
+              <td>Beweglich</td>
+              <td>Gut erforscht</td>
+            </tr>
+            <tr class="art">
+              <td>Fleckendelfin</td>
+              <td>Tropische Ozeane</td>
+              <td>Mittel</td>
+              <td>Gefährdet</td>
+              <td>Flecken auf Haut</td>
+              <td>Großgruppen</td>
+              <td>Schnell</td>
+              <td>Gut erforscht</td>
+            </tr>
+            <tr class="art">
+              <td>Schwarz-Weiß-Delfin</td>
+              <td>Südlicher Ozean</td>
+              <td>Klein</td>
+              <td>Stark gefährdet</td>
+              <td>Krasser Farbkontrast</td>
+              <td>Gruppen</td>
+              <td>Aktiv</td>
+              <td>Kaum erforscht</td>
+            </tr>
+            <tr class="art">
+              <td>Spinnerdelfin</td>
+              <td>Tropisch</td>
+              <td>Mittel</td>
+              <td>Nicht gefährdet</td>
+              <td>Schraubendreh-Sprünge</td>
+              <td>Sehr sozial</td>
+              <td>Verspielt</td>
+              <td>Gut erforscht</td>
+            </tr>
+            <tr class="art">
+              <td>Clymene-Delfin</td>
+              <td>Atlantik</td>
+              <td>Mittel</td>
+              <td>Unklar</td>
+              <td>Sehr selten</td>
+              <td>Zurückhaltend</td>
+              <td>Durchschnittlich</td>
+              <td>Kaum erforscht</td>
+            </tr>
+            <tr class="art">
+              <td>Rauzahndelfin</td>
+              <td>Hochsee</td>
+              <td>Mittel</td>
+              <td>Nicht gefährdet</td>
+              <td>Langer Schnabel</td>
+              <td>Große Gruppen</td>
+              <td>Schnell</td>
+              <td>Mittel erforscht</td>
+            </tr>
+            <tr class="art">
+              <td>Australischer Schnabeldelfin</td>
+              <td>Küste Australien</td>
+              <td>Mittel</td>
+              <td>Gefährdet</td>
+              <td>2011 entdeckt</td>
+              <td>Unbekannt</td>
+              <td>Unklar</td>
+              <td>Neu entdeckt</td>
+            </tr>
+            <tr class="art">
+              <td>Ganges-Delfin</td>
+              <td>Süßwasser Indien</td>
+              <td>Mittel</td>
+              <td>Stark gefährdet</td>
+              <td>Fast blind</td>
+              <td>Eher einzeln</td>
+              <td>Mit Echoortung</td>
+              <td>Mittel erforscht</td>
+            </tr>
+            <tr class="art">
+              <td>Buckeldelfin</td>
+              <td>Küste Afrika/Asien</td>
+              <td>Mittel</td>
+              <td>Gefährdet</td>
+              <td>Rückenbuckel</td>
+              <td>Klein-Gruppen</td>
+              <td>Langsam</td>
+              <td>Wenig erforscht</td>
+            </tr>
+            <tr class="art">
+              <td>Commerson-Delfin</td>
+              <td>Südpolarmeer</td>
+              <td>Klein</td>
+              <td>Nicht gefährdet</td>
+              <td>Schwarz-Weiß wie ein Panda</td>
+              <td>Sozial</td>
+              <td>Beweglich</td>
+              <td>Gut erforscht</td>
+            </tr>
+          </tbody>
+        </table>
 
-    Küstennah
 
-    Fluss / Süßwasser
-
-    Tropisch
-
-    Subtropisch
-
-    Gemäßigt
-
-    Kaltwasser
-
- Körpergröße:
-
-    Klein (unter 2 m)
-
-    Mittel (2–4 m)
-
-    Groß (über 4 m)
-
-
- Verhalten:
-
-    Einzelgängerisch
-
-    In Gruppen / Schulen
-
-    Spielerisch
-
-    Hochintelligent
-
-    Werkzeugnutzung
-
-✅ Gefährdung:
-
-    Nicht gefährdet
-
-    Gefährdet
-
-    Stark gefährdet
-
-    Vom Aussterben bedroht
-
-✅ Bekanntheit:
-
-    Weltweit bekannt
-
-    Weniger bekannt
-
-    Kaum erforscht
-
-✅ Kommunikation:
-
-    Echoortung
-
-    Individueller Pfeifton
-
-    Komplexe Soziallaute
-
-Besonderheiten:    Schwertartige Finne (z. B. Orca)    Flussschnauze (z. B. Gangesdelfin)  Rundkopf (z. B. Beluga oder Irrawaddy) Zahnanzahl variierend
-
-Fortbewegung:  Sehr schnell (über 40 km/h)    Durchschnittlich (20–30 km/h) Gemächlich (besonders Flussdelfine)
-
-Sozialstruktur:  Stark ausgeprägt Mittel ausgeprägt Gering
-        
-
-        
-        
-        Großer Tümmler
-Lebensraum: Küste, Hochsee
-Größe: Mittel
-Gefährdung: Nicht gefährdet
-Besonderheit: Bekannt aus TV
-Soziales Verhalten: Große Gruppen
-Fortbewegung: Schnell und verspielt
-Entdeckungsstatus: Gut erforscht
-
-Gemeiner Delfin
-Lebensraum: Hochsee
-Größe: Mittel
-Gefährdung: Nicht gefährdet
-Besonderheit: Schneller Schwimmer
-Soziales Verhalten: Schwärme
-Fortbewegung: Sehr schnell
-Entdeckungsstatus: Gut erforscht
-
-Orca (Schwertwal)
-Lebensraum: Weltweit
-Größe: Groß
-Gefährdung: Nicht gefährdet
-Besonderheit: Größter Delfin
-Soziales Verhalten: Familiengruppen
-Fortbewegung: Kraftvoll
-Entdeckungsstatus: Sehr gut erforscht
-
-Irawadi-Delfin
-Lebensraum: Küste, Flüsse
-Größe: Klein
-Gefährdung: Gefährdet
-Besonderheit: Rundkopf, Süßwasser
-Soziales Verhalten: Kleine Gruppen
-Fortbewegung: Gemächlich
-Entdeckungsstatus: Teilweise erforscht
-
-Amazonas-Flussdelfin
-Lebensraum: Flüsse
-Größe: Mittel
-Gefährdung: Stark gefährdet
-Besonderheit: Rosa Farbe
-Soziales Verhalten: Eher einzelgängerisch
-Fortbewegung: Langsam, wendig
-Entdeckungsstatus: Gut erforscht
-
-Heaviside-Delfin
-Lebensraum: Küste Südafrika
-Größe: Klein
-Gefährdung: Gefährdet
-Besonderheit: Scheu, selten
-Soziales Verhalten: Kleine Gruppen
-Fortbewegung: Vorsichtig
-Entdeckungsstatus: Wenig erforscht
-
-Weißseitendelfin
-Lebensraum: Nordatlantik
-Größe: Mittel
-Gefährdung: Nicht gefährdet
-Besonderheit: Auffällige Färbung
-Soziales Verhalten: Gruppen
-Fortbewegung: Beweglich
-Entdeckungsstatus: Gut erforscht
-
-Fleckendelfin
-Lebensraum: Tropische Ozeane
-Größe: Mittel
-Gefährdung: Gefährdet
-Besonderheit: Flecken auf Haut
-Soziales Verhalten: Großgruppen
-Fortbewegung: Schnell
-Entdeckungsstatus: Gut erforscht
-
-Schwarz-Weiß-Delfin
-Lebensraum: Südlicher Ozean
-Größe: Klein
-Gefährdung: Stark gefährdet
-Besonderheit: Krasser Farbkontrast
-Soziales Verhalten: Gruppen
-Fortbewegung: Aktiv
-Entdeckungsstatus: Kaum erforscht
-
-Spinnerdelfin
-Lebensraum: Tropisch
-Größe: Mittel
-Gefährdung: Nicht gefährdet
-Besonderheit: Schraubendreh-Sprünge
-Soziales Verhalten: Sehr sozial
-Fortbewegung: Verspielt
-Entdeckungsstatus: Gut erforscht
-
-Clymene-Delfin
-Lebensraum: Atlantik
-Größe: Mittel
-Gefährdung: Unklar
-Besonderheit: Sehr selten
-Soziales Verhalten: Zurückhaltend
-Fortbewegung: Durchschnittlich
-Entdeckungsstatus: Kaum erforscht
-
-Rauzahndelfin
-Lebensraum: Hochsee
-Größe: Mittel
-Gefährdung: Nicht gefährdet
-Besonderheit: Langer Schnabel
-Soziales Verhalten: Große Gruppen
-Fortbewegung: Schnell
-Entdeckungsstatus: Mittel erforscht
-
-Australischer Schnabeldelfin
-Lebensraum: Küste Australien
-Größe: Mittel
-Gefährdung: Gefährdet
-Besonderheit: 2011 entdeckt
-Soziales Verhalten: Unbekannt
-Fortbewegung: Unklar
-Entdeckungsstatus: Neu entdeckt
-
-Ganges-Delfin
-Lebensraum: Süßwasser Indien
-Größe: Mittel
-Gefährdung: Stark gefährdet
-Besonderheit: Fast blind
-Soziales Verhalten: Eher einzeln
-Fortbewegung: Mit Echoortung
-Entdeckungsstatus: Mittel erforscht
-
-Buckeldelfin
-Lebensraum: Küste Afrika/Asien
-Größe: Mittel
-Gefährdung: Gefährdet
-Besonderheit: Rückenbuckel
-Soziales Verhalten: Klein-Gruppen
-Fortbewegung: Langsam
-Entdeckungsstatus: Wenig erforscht
-
-Commerson-Delfin
-Lebensraum: Südpolarmeer
-Größe: Klein
-Gefährdung: Nicht gefährdet
-Besonderheit: Schwarz-Weiß wie ein Panda
-Soziales Verhalten: Sozial
-Fortbewegung: Beweglich
-Entdeckungsstatus: Gut erforscht-->
       </div>
     </section>
 
@@ -577,13 +539,13 @@ Entdeckungsstatus: Gut erforscht-->
         <h2>Mehr Infos zu Delfinen?</h2>
 
         <select id="Interesse">
-              <option value="alle">Alle</option>
-              <option value="gefährdet">Gefährdet</option>
-              <option value="nicht gefährdet">Nicht gefährdet</option>
-              <option value="süßwasser">Süßwasser</option>
-              <option value="küste">Küste</option>
-              <option value="hochsee">Hochsee</option>
-            </select>
+          <option value="alle">Alle</option>
+          <option value="gefährdet">Gefährdet</option>
+          <option value="nicht gefährdet">Nicht gefährdet</option>
+          <option value="süßwasser">Süßwasser</option>
+          <option value="küste">Küste</option>
+          <option value="hochsee">Hochsee</option>
+        </select>
         <!---Select mit intereesiertem Bereich, 3 Links passen sich an-->
         <ul> <!---Switch Funktion, Select Box-->
           <li><a href="https://www.google.de">Google</a></li>
