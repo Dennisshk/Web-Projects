@@ -13,11 +13,18 @@ function quizbutton() {
     document.getElementById("quizbutton").innerText = "Beenden";
     document.getElementById("ergebnis").innerHTML = "Du hast <strong>" + x + "</strong> von 13 richtige Antworten. Das ist " + message;
     disableQuizElements(true)
+
+    if (x > 6) {
+      document.getElementById("giphy").innerHTML = "<iframe src=\"https://giphy.com/embed/lShSjh2K3TpOwGwlwU\" width=\"480\" height=\"271\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe>";
+    } else {
+      document.getElementById("giphy").innerHTML = "<iframe src=\"https://giphy.com/embed/9Y5BbDSkSTiY8\" width=\"480\" height=\"336\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe>";
+    }
   } else {
     document.getElementById("quizbutton").innerText = "Starten";
     document.getElementById("questions").style.display = "none";
     document.getElementById("quiztitel").innerHTML = "Teste hier dein <br> Wissen über Delfine.";
     document.getElementById("ergebnis").innerHTML = "";
+    document.getElementById("giphy").innerHTML = "";
   }
 }
 
@@ -76,9 +83,9 @@ function nachricht(x) {
     case 4:
       return "nicht gut.";
     case 5:
-      return "Es ist akzeptabel, aber nicht gut.";
+      return "akzeptabel, aber nicht gut.";
     case 6:
-      return "Es ist OK.";
+      return "OK.";
     case 7:
       return "ganz OK.";
     case 8:
@@ -89,8 +96,6 @@ function nachricht(x) {
       return "ziemlich gut";
     case 11:
       return "sehr gut.";
-    case 12:
-      return "faszinierend.";
     default:
       return "bemerkenswert.";
   }
