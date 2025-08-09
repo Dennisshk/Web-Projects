@@ -213,48 +213,40 @@ accordion fix?-->
           <!---<input type="text" placeholder="1"><input type="text" placeholder="2">-->
           <div class="filterElement">
             <p>Lebensraum:</p>
-            <select class="filter">
+            <select id="leben">
               <option value="alle">Alle</option>
-              <option value="gefährdet">Gefährdet</option>
-              <option value="nicht gefährdet">Nicht gefährdet</option>
+              <option value="gefährdet">Küste</option>
+              <option value="nicht gefährdet">Hochsee</option>
               <option value="süßwasser">Süßwasser</option>
-              <option value="küste">Küste</option>
-              <option value="hochsee">Hochsee</option>
+              <option value="küste">Flüsse</option>
+              <option value="hochsee">Tropisch</option>
             </select>
           </div>
           <div class="filterElement">
-            <p>Lebensraum:</p>
-            <select class="filter">
-              <option value="alle">Alle</option>
-              <option value="gefährdet">Gefährdet</option>
-              <option value="nicht gefährdet">Nicht gefährdet</option>
-              <option value="süßwasser">Süßwasser</option>
-              <option value="küste">Küste</option>
-              <option value="hochsee">Hochsee</option>
-            </select>
+            <p>Größe:</p>
+            <input type="checkbox" name="groeße" id="g1"><label for="g1">Klein</label><br>
+            <input type="checkbox" name="groeße" id="g2"><label for="g2">Mittel</label><br>
+            <input type="checkbox" name="groeße" id="g3"><label for="g3">Groß</label>
           </div>
           <div class="filterElement">
-            <p>Lebensraum:</p>
-            <select class="filter">
-              <option value="alle">Alle</option>
-              <option value="gefährdet">Gefährdet</option>
-              <option value="nicht gefährdet">Nicht gefährdet</option>
-              <option value="süßwasser">Süßwasser</option>
-              <option value="küste">Küste</option>
-              <option value="hochsee">Hochsee</option>
-            </select>
+            <p>Gefährdet:</p>
+            <input type="checkbox" name="groeße" id="ge1"><label for="ge1">Nicht gefährdet</label><br>
+            <input type="checkbox" name="groeße" id="ge2"><label for="ge2">Gefährdet</label><br>
+            <input type="checkbox" name="groeße" id="ge3"><label for="ge3">Stark gefährdet</label>
           </div>
           <div class="filterElement">
-            <input type="radio" name="auswahl">
-            <input type="radio" name="auswahl">
+            <p>Entdeckungsstatus:</p>
+            <input type="checkbox" name="groeße" id="e1"><label for="e1">Gut erforscht</label><br>
+            <input type="checkbox" name="groeße" id="e2"><label for="e2">Mittel erforscht</label><br>
+            <input type="checkbox" name="groeße" id="e3"><label for="e3">Sonst</label>
           </div>
         </div>
 
         <p>Aktive Filter: keine</p>
-        <button>Anwenden</button>
-        <button>alle Zurücksetzen</button>
+        <button onclick="filtern()">Anwenden</button>
+        <button onclick="filterDefault()">alle Zurücksetzen</button>
 
-        <br><br><br><br>
+        <br>
 
         <h3>Artenliste:</h3>
 
@@ -300,7 +292,7 @@ accordion fix?-->
               <td>Größter Delfin</td>
               <td>Familiengruppen</td>
               <td>Kraftvoll</td>
-              <td>Sehr gut erforscht</td>
+              <td>Gut erforscht</td>
             </tr>
             <tr class="art">
               <td>Irawadi-Delfin</td>
@@ -324,7 +316,7 @@ accordion fix?-->
             </tr>
             <tr class="art">
               <td>Heaviside-Delfin</td>
-              <td>Küste Südafrika</td>
+              <td>Küste</td>
               <td>Klein</td>
               <td>Gefährdet</td>
               <td>Scheu, selten</td>
@@ -334,7 +326,7 @@ accordion fix?-->
             </tr>
             <tr class="art">
               <td>Weißseitendelfin</td>
-              <td>Nordatlantik</td>
+              <td>Ozean</td>
               <td>Mittel</td>
               <td>Nicht gefährdet</td>
               <td>Auffällige Färbung</td>
@@ -344,7 +336,7 @@ accordion fix?-->
             </tr>
             <tr class="art">
               <td>Fleckendelfin</td>
-              <td>Tropische Ozeane</td>
+              <td>Tropisch</td>
               <td>Mittel</td>
               <td>Gefährdet</td>
               <td>Flecken auf Haut</td>
@@ -354,7 +346,7 @@ accordion fix?-->
             </tr>
             <tr class="art">
               <td>Schwarz-Weiß-Delfin</td>
-              <td>Südlicher Ozean</td>
+              <td>Ozean</td>
               <td>Klein</td>
               <td>Stark gefährdet</td>
               <td>Krasser Farbkontrast</td>
@@ -374,7 +366,7 @@ accordion fix?-->
             </tr>
             <tr class="art">
               <td>Clymene-Delfin</td>
-              <td>Atlantik</td>
+              <td>Ozean</td>
               <td>Mittel</td>
               <td>Unklar</td>
               <td>Sehr selten</td>
@@ -394,7 +386,7 @@ accordion fix?-->
             </tr>
             <tr class="art">
               <td>Australischer Schnabeldelfin</td>
-              <td>Küste Australien</td>
+              <td>Küste</td>
               <td>Mittel</td>
               <td>Gefährdet</td>
               <td>2011 entdeckt</td>
@@ -404,7 +396,7 @@ accordion fix?-->
             </tr>
             <tr class="art">
               <td>Ganges-Delfin</td>
-              <td>Süßwasser Indien</td>
+              <td>Süßwasser</td>
               <td>Mittel</td>
               <td>Stark gefährdet</td>
               <td>Fast blind</td>
@@ -414,7 +406,7 @@ accordion fix?-->
             </tr>
             <tr class="art">
               <td>Buckeldelfin</td>
-              <td>Küste Afrika/Asien</td>
+              <td>Küste</td>
               <td>Mittel</td>
               <td>Gefährdet</td>
               <td>Rückenbuckel</td>
@@ -424,7 +416,7 @@ accordion fix?-->
             </tr>
             <tr class="art">
               <td>Commerson-Delfin</td>
-              <td>Südpolarmeer</td>
+              <td>Ozean</td>
               <td>Klein</td>
               <td>Nicht gefährdet</td>
               <td>Schwarz-Weiß wie ein Panda</td>

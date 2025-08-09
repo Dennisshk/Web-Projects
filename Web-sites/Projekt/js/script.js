@@ -116,6 +116,16 @@ function nachricht(x) {
 }
 
 
+// ------- Filterfunktion --------
+function filtern(){
+
+}
+
+function filterDefault(){
+
+}
+
+
 // ------- Bild bearbeiten --------
 function picture(next) {
   let index = document.getElementById("wechselBildRange").value;
