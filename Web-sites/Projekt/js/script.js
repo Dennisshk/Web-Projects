@@ -137,7 +137,7 @@ function filtern() {
 
   // Filter anwenden
   if(leben!="Alle")filterLeben(rows, leben);
-  if(groesse)filterRadio(rows, 2, "leben"); 
+  if(groesse)filterRadio(rows, 2, "groesse"); 
   if(gef)filterRadio(rows, 3, "gef"); 
   if(erf)filterRadio(rows, 7, "erf"); 
 }
@@ -155,7 +155,7 @@ function getCheckedValue(name) {
 function isChecked(name, value){
   let radios = document.getElementsByName(name);
   for(let i = 0; i < radios.length; i++){
-    console.log(radios[i].checked + radios[i].value + value);
+    console.log(radios[i].checked +" radioWert: "+ radios[i].value +" value: " + value);
       if(radios[i].checked && radios[i].value == value) return true;
   }
   return false;
@@ -172,9 +172,10 @@ function filterLeben(rows, leben) {
 
 // Filtert nach Radio-Button
 function filterRadio(rows, col, name) {
-  console.log("Bin da"+rows+"  "+col);
+  //console.log("Bin da"+rows+"  "+col);
   for (let i = 1; i < rows.length; i++) {
     if (!isChecked(name,rows[i].cells[col].innerHTML)) {
+      console.log(name + rows[i].cells[col].innerHTML);
       rows[i].style.display = "none";
     }  
   }
