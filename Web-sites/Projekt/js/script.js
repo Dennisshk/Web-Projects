@@ -117,21 +117,72 @@ function nachricht(x) {
 
 
 // ------- Filterfunktion --------
-function filtern(){
-  let filter = document.getElementsByClassName("filterElement");
 
 
-  let rows = document.getElementsByClassName("art");
-  for(let i; i<rows.length;i++){
+function filtern() {
+  let table = document.getElementById("arten");
+  let rows = table.rows;
 
+  // Filterwerte holen
+  let leben = document.getElementById("leben").value;
+  let groesse = getCheckedValue("groesse");
+  let gef = getCheckedValue("gef");
+  let erf = getCheckedValue("erf");
+
+  // Alle Zeilen erst mal einblenden
+  for (let i = 1; i < rows.length; i++) {
+    rows[i].style.display = "";
+  }
+
+  // Filter anwenden
+  if(leben!="Alle")filterLeben(rows, leben);
+  if(!groesse)filterRadio(rows, 2, "leben"); 
+  if(!gef)filterRadio(rows, 3, "gef"); 
+  if(!erf)filterRadio(rows, 7, "erf"); 
+}
+
+// Ist Radio gewählt <=> Ist Filter aktiv?
+function getCheckedValue(name) {
+  let radios = document.getElementsByName(name);
+  for (let i = 0; i < radios.length; i++) {
+    if (radios[i].checked) return true;
+  }
+  return false;
+}
+
+//Prüfe ob Wert bei jenen Buttons angeklickt
+function isChecked(name, value){
+  let radios = document.getElementsByName(name);
+  for(let i = 0; i < radios.length; i++){
+      if(radios[i].checked && radios[i].value == value) return true;
+  }
+  return false;
+}
+
+// Filtert nach Lebensraum
+function filterLeben(rows, leben, name) {
+  if (leben === "Alle") return;
+  for (let i = 1; i < rows.length; i++) {
+    if (rows[i].cells[1].innerText !== leben) {
+      rows[i].style.display = "none";
+    }
+  }
+}
+
+// Filtert nach Radio-Button
+function filterRadio(rows, col) {
+  for (let i = 1; i < rows.length; i++) {
+    if (!isChecked()) {
+      rows[i].style.display = "none";
+    }  
   }
 }
 
 function filterDefault() {
   document.getElementById("leben").value = "Alle";
-  var ids = ["g1","g2","g3","ge1","ge2","ge3","e1","e2","e3"];
+  let ids = ["g1", "g2", "g3", "ge1", "ge2", "ge3", "e1", "e2", "e3"];
   for (var i = 0; i < ids.length; i++) {
-    var el = document.getElementById(ids[i]);
+    let el = document.getElementById(ids[i]);
     if (el) {
       el.checked = false;
     }
@@ -177,8 +228,8 @@ function picture(next) {
       beschreibung = "Es sieht immer sehr schön aus, wenn Delfine aus dem Wasser springen";
       break;
     default:
-      alt="";
-      beschreibung="";
+      alt = "";
+      beschreibung = "";
   }
   document.getElementById("wechselBild").alt = alt;
   document.getElementById("wechselBildText").innerHTML = beschreibung;
@@ -252,18 +303,18 @@ function navbar() {
 }
 
 
-function changeWidht(){
+function changeWidht() {
   let widht = document.getElementById("widht").value;
   let blocks = document.getElementsByClassName("block");
-  for(let i = 0; i < blocks.length; i++){
+  for (let i = 0; i < blocks.length; i++) {
     blocks[i].style.width = widht + "%";
   }
   let lBlocks = document.getElementsByClassName("littleBlock");
-  for(let i = 0; i < lBlocks.length; i++){
+  for (let i = 0; i < lBlocks.length; i++) {
     lBlocks[i].style.width = (widht / 2 + 1) + "%";
   }
   let bBlocks = document.getElementsByClassName("bigBlock");
-  for(let i = 0; i < bBlocks.length; i++){
+  for (let i = 0; i < bBlocks.length; i++) {
     bBlocks[i].style.width = (widht * 1.5 + 8) + "%";
   }
 }
@@ -294,7 +345,7 @@ function design() {
       e.style.background.color = "#b4cac8";
     });
 
-    document.getElementById("bild3").style.color="#000000ff";
+    document.getElementById("bild3").style.color = "#000000ff";
 
   } else {
 
@@ -315,7 +366,7 @@ function design() {
       e.style.color = "#b2b2b8";
     });
 
-    document.getElementById("bild3").style.color="#7877a0ff";
+    document.getElementById("bild3").style.color = "#7877a0ff";
   }
 }
 
