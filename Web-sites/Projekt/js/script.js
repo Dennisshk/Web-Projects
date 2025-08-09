@@ -128,6 +128,7 @@ function filtern() {
   let groesse = getCheckedValue("groesse");
   let gef = getCheckedValue("gef");
   let erf = getCheckedValue("erf");
+  console.log(leben+groesse+gef+erf);
 
   // Alle Zeilen erst mal einblenden
   for (let i = 1; i < rows.length; i++) {
@@ -136,9 +137,9 @@ function filtern() {
 
   // Filter anwenden
   if(leben!="Alle")filterLeben(rows, leben);
-  if(!groesse)filterRadio(rows, 2, "leben"); 
-  if(!gef)filterRadio(rows, 3, "gef"); 
-  if(!erf)filterRadio(rows, 7, "erf"); 
+  if(groesse)filterRadio(rows, 2, "leben"); 
+  if(gef)filterRadio(rows, 3, "gef"); 
+  if(erf)filterRadio(rows, 7, "erf"); 
 }
 
 // Ist Radio gewählt <=> Ist Filter aktiv?
@@ -154,25 +155,26 @@ function getCheckedValue(name) {
 function isChecked(name, value){
   let radios = document.getElementsByName(name);
   for(let i = 0; i < radios.length; i++){
+    console.log(radios[i].checked + radios[i].value + value);
       if(radios[i].checked && radios[i].value == value) return true;
   }
   return false;
 }
 
 // Filtert nach Lebensraum
-function filterLeben(rows, leben, name) {
-  if (leben === "Alle") return;
+function filterLeben(rows, leben) {
   for (let i = 1; i < rows.length; i++) {
-    if (rows[i].cells[1].innerText !== leben) {
+    if (!rows[i].cells[1].innerText .includes( leben)) {
       rows[i].style.display = "none";
     }
   }
 }
 
 // Filtert nach Radio-Button
-function filterRadio(rows, col) {
+function filterRadio(rows, col, name) {
+  console.log("Bin da"+rows+"  "+col);
   for (let i = 1; i < rows.length; i++) {
-    if (!isChecked()) {
+    if (!isChecked(name,rows[i].cells[col].innerHTML)) {
       rows[i].style.display = "none";
     }  
   }
