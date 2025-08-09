@@ -29,15 +29,17 @@ function berechnePunkte() {
 
   if (document.getElementById("f3a2").checked) points++;
 
-  if (document.getElementById("f4a1").checked) points++;
-  if (document.getElementById("f4a4").checked) points++;
-  if (document.getElementById("f4a3").checked) points--;
-  if (document.getElementById("f4a2").checked) points--;
+  let radios4 = document.getElementsByName("frage4");
+  if (radios4[0].checked) points++;
+  if (radios4[1].checked) points--;
+  if (radios4[2].checked) points--;
+  if (radios4[3].checked) points++;
 
-  if (document.getElementById("f5a1").checked) points++;
-  if (document.getElementById("f5a3").checked) points++;
-  if (document.getElementById("f5a4").checked) points++;
-  if (document.getElementById("f5a2").checked) points--;
+  let radios5 = document.getElementsByName("frage5");
+  if (radios5[0].checked) points++;
+  if (radios5[1].checked) points--;
+  if (radios5[2].checked) points++;
+  if (radios5[3].checked) points++;
 
   if (document.getElementById("f6").value.toLowerCase() == "amazonas-flussdelfin" || document.getElementById("f6").value.toLowerCase() == "ganges-delfin") points++;
   if (document.getElementById("f7").value.toLowerCase() == "schule") points++;
@@ -49,31 +51,10 @@ function berechnePunkte() {
 }
 
 function disableQuizElements(disabled) {
-  document.getElementById("f1a1").disabled = disabled;
-  document.getElementById("f1a2").disabled = disabled;
-  document.getElementById("f1a3").disabled = disabled;
-  document.getElementById("f1a4").disabled = disabled;
-  document.getElementById("f2a1").disabled = disabled;
-  document.getElementById("f2a2").disabled = disabled;
-  document.getElementById("f2a3").disabled = disabled;
-  document.getElementById("f2a4").disabled = disabled;
-  document.getElementById("f3a1").disabled = disabled;
-  document.getElementById("f3a2").disabled = disabled;
-  document.getElementById("f3a3").disabled = disabled;
-  document.getElementById("f3a4").disabled = disabled;
-  document.getElementById("f4a1").disabled = disabled;
-  document.getElementById("f4a2").disabled = disabled;
-  document.getElementById("f4a3").disabled = disabled;
-  document.getElementById("f4a4").disabled = disabled;
-  document.getElementById("f5a1").disabled = disabled;
-  document.getElementById("f5a2").disabled = disabled;
-  document.getElementById("f5a3").disabled = disabled;
-  document.getElementById("f5a4").disabled = disabled;
-  document.getElementById("f6").disabled = disabled;
-  document.getElementById("f7").disabled = disabled;
-  document.getElementById("f8").disabled = disabled;
-  document.getElementById("f9").disabled = disabled;
-  document.getElementById("f10").disabled = disabled;
+  let ids = ["f1a1", "f1a2", "f1a3", "f1a4", "f2a1", "f2a2", "f2a3", "f2a4", "f3a1", "f3a2", "f3a3", "f3a4", "f4a1", "f4a2", "f4a3", "f4a4", "f5a1", "f5a2", "f5a3", "f5a4", "f6", "f7", "f8", "f9", "f10"];
+  for (let i = 0; i < ids.length; i++) {
+    document.getElementById(ids[i]).disabled = disabled;
+  }
 }
 
 function nachricht(x) {
@@ -128,17 +109,17 @@ function filtern() {
   let groesse = getCheckedValue("groesse");
   let gef = getCheckedValue("gef");
   let erf = getCheckedValue("erf");
-  console.log(leben+groesse+gef+erf);
+  console.log(leben + groesse + gef + erf);
 
   //Anzeige aktualisieren
-  if(leben == "Alle" && !groesse && !gef && !erf){
+  if (leben == "Alle" && !groesse && !gef && !erf) {
     document.getElementById("filterAnzeige").innerHTML = "Keine";
-  }else{
+  } else {
     let anzeige = "";
-    if(leben != "Alle") anzeige=anzeige + "Lebensraum ";
-    if(groesse) anzeige=anzeige + "Größe ";
-    if(gef) anzeige=anzeige + "Gefährdet ";
-    if(erf) anzeige=anzeige + "Entdeckungsstatus ";
+    if (leben != "Alle") anzeige = anzeige + "Lebensraum ";
+    if (groesse) anzeige = anzeige + "Größe ";
+    if (gef) anzeige = anzeige + "Gefährdet ";
+    if (erf) anzeige = anzeige + "Entdeckungsstatus ";
     document.getElementById("filterAnzeige").innerHTML = anzeige;
   }
 
@@ -149,10 +130,10 @@ function filtern() {
   }
 
   // Filter anwenden
-  if(leben!="Alle")filterLeben(rows, leben);
-  if(groesse)filterRadio(rows, 2, "groesse"); 
-  if(gef)filterRadio(rows, 3, "gef"); 
-  if(erf)filterRadio(rows, 7, "erf"); 
+  if (leben != "Alle") filterLeben(rows, leben);
+  if (groesse) filterRadio(rows, 2, "groesse");
+  if (gef) filterRadio(rows, 3, "gef");
+  if (erf) filterRadio(rows, 7, "erf");
 }
 
 // Ist Radio gewählt <=> Ist Filter aktiv?
@@ -165,11 +146,11 @@ function getCheckedValue(name) {
 }
 
 //Prüfe ob Wert bei jenen Buttons angeklickt
-function isChecked(name, value){
+function isChecked(name, value) {
   let radios = document.getElementsByName(name);
-  for(let i = 0; i < radios.length; i++){
-    console.log(radios[i].checked +" radioWert: "+ radios[i].value +" value: " + value);
-      if(radios[i].checked && radios[i].value == value) return true;
+  for (let i = 0; i < radios.length; i++) {
+    console.log(radios[i].checked + " radioWert: " + radios[i].value + " value: " + value);
+    if (radios[i].checked && radios[i].value == value) return true;
   }
   return false;
 }
@@ -177,7 +158,7 @@ function isChecked(name, value){
 // Filtert nach Lebensraum
 function filterLeben(rows, leben) {
   for (let i = 1; i < rows.length; i++) {
-    if (!rows[i].cells[1].innerText .includes( leben)) {
+    if (!rows[i].cells[1].innerText.includes(leben)) {
       rows[i].style.display = "none";
     }
   }
@@ -187,10 +168,10 @@ function filterLeben(rows, leben) {
 function filterRadio(rows, col, name) {
   //console.log("Bin da"+rows+"  "+col);
   for (let i = 1; i < rows.length; i++) {
-    if (!isChecked(name,rows[i].cells[col].innerHTML)) {
+    if (!isChecked(name, rows[i].cells[col].innerHTML)) {
       console.log(name + rows[i].cells[col].innerHTML);
       rows[i].style.display = "none";
-    }  
+    }
   }
 }
 
