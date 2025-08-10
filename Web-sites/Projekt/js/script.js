@@ -3,19 +3,22 @@ function quizbutton() {
   if (document.getElementById("quizbutton").innerHTML === "Starten") {
     console.log("test");
     document.getElementById("quizbutton").innerText = "Auswertung";
-    document.getElementById("questions").style.display = "block";
-    document.getElementById("quiztitel").innerHTML = "Abgabe:";
+    document.getElementById("questions").style.display = "flex";
+    document.getElementById("quiztitel").innerHTML = "Zur Auswertung abgeben:";
     disableQuizElements(false);
   } else if (document.getElementById("quizbutton").innerHTML === "Auswertung") {
+    if (!confirm("Wirklich auswerten?")) return;
     x = berechnePunkte();
     message = nachricht(x);
 
     document.getElementById("quizbutton").innerText = "Beenden";
+    document.getElementById("quiztitel").innerHTML = "Ergebnis";
     document.getElementById("ergebnis").innerHTML = "Du hast <strong>" + x + "</strong> von 13 richtige Antworten. Das ist " + message;
     disableQuizElements(true)
 
     if (x > 6) {
-      document.getElementById("giphy").innerHTML = "<iframe src=\"https://giphy.com/embed/lShSjh2K3TpOwGwlwU\" width=\"480\" height=\"271\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe>";
+      //document.getElementById("giphy").innerHTML = "<iframe src=\"https://giphy.com/embed/lShSjh2K3TpOwGwlwU\" width=\"480\" height=\"271\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe>";
+      document.getElementById("giphy").innerHTML = "<iframe src=\"https://giphy.com/embed/eIyU7TVEkGFBmR01gm\" width=\"480\" height=\"271\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe>";
     } else {
       document.getElementById("giphy").innerHTML = "<iframe src=\"https://giphy.com/embed/9Y5BbDSkSTiY8\" width=\"480\" height=\"336\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe>";
     }
@@ -48,12 +51,13 @@ function berechnePunkte() {
   if (radios5[2].checked) points++;
   if (radios5[3].checked) points++;
 
-  if (document.getElementById("f6").value.toLowerCase() == "amazonas-flussdelfin" || document.getElementById("f6").value.toLowerCase() == "ganges-delfin") points++;
+  if (document.getElementById("f6").value.toLowerCase().includes("amazonas-flussdelfin") || document.getElementById("f6").value.toLowerCase().includes("ganges-delfin")) points++;
   if (document.getElementById("f7").value.toLowerCase() == "schule") points++;
+  console.log(document.getElementById("f7").value.toLowerCase() == "schule");
 
-  if (document.getElementById("f8").value == 20) points++;
-  if (document.getElementById("f9").value == 55) points++;
-  if (document.getElementById("f10").value == 40) points++;
+  if (document.getElementById("f8").value >= 17 && document.getElementById("f8").value <= 23) points++;
+  if (document.getElementById("f9").value >= 53 && document.getElementById("f9").value <= 57) points++;
+  if (document.getElementById("f10").value >= 35 && document.getElementById("f10").value <= 45) points++;
   return points;
 }
 
@@ -100,6 +104,47 @@ function nachricht(x) {
       return "bemerkenswert.";
   }
 }
+// -------- Weitere Links ---------
+
+function interessiert() {
+  let interesse = document.getElementById("interesse").value;
+  let links = document.getElementsByClassName("links");
+  switch (interesse) {
+    case "allgemein":
+      links[0].innerHTML = "<a href=\"https://us.whales.org/whales-dolphins/facts-about-dolphins\">Dolphin Conservation</a> (Kurzer Überblick)";
+      links[1].innerHTML = "<a href=\"https://dolphins.org/dolphin_information\">Dolphins.org</a> (Geschichte, Kommunikation, Anatomie)";
+      links[2].innerHTML = "<a href=\"https://www.wwf.org.uk/learn/fascinating-facts/dolphins\">WWF</a> (Lebensräume und Arten)";
+      break;
+    case "lebensraum":
+      links[0].innerHTML = "<a href=\"https://www.dolphinsplus.com/blog/dolphin-habitats\">Dolphins Plus</a> (Küsten, Flüsse, Kanäle)";
+      links[1].innerHTML = "<a href=\"https://us.whales.org/whales-dolphins/where-do-dolphins-live\">Whales.org</a> (Flüsse, Meere)";
+      links[2].innerHTML = "<a href=\"https://defenders.org/wildlife/dolphins\">Defenders of Wildlife</a> (Küsten & Süßwasser)";
+      break;
+    case "nahrung":
+      links[0].innerHTML = "<a href=\"https://us.whales.org/whales-dolphins/what-do-dolphins-eat\">WDC</a> (Fische, Tintenfische, Krebstiere)";
+      links[1].innerHTML = "<a href=\"https://www.fisheries.noaa.gov/dolphins-porpoises\">NOAA Fisheries</a> (Nahrungsnetz)";
+      links[2].innerHTML = "<a href=\"https://nagonline.net/tag/dolphin\">NAgroonline</a> (Ernährung captive Tümmler)";
+      break;
+    case "arten":
+      links[0].innerHTML = "<a href=\"https://www.activewild.com/types-of-dolphins\">ActiveWild</a> (Komplette Artenliste)";
+      links[1].innerHTML = "<a href=\"https://sanctuaries.noaa.gov/education/teachers/dolphins/species-spotlight.html\">NOAA Sanctuary</a> (Seltene Delfinarten)";
+      links[2].innerHTML = "<a href=\"https://en.wikipedia.org/wiki/List_of_cetaceans\">Wikipedia</a> (Delphin- & Flusssäugerfamilien)";
+      break;
+    case "schutz":
+      links[0].innerHTML = "<a href=\"https://us.whales.org\">Whales.org</a> (Kampagnen)";
+      links[1].innerHTML = "<a href=\"https://impactful.ninja/best-charities-for-dolphins\">Impactful.ninja</a> (NGO-Vergleich & Ziele)";
+      links[2].innerHTML = "<a href=\"https://www.riverdolphins.org\">Riverdolphins.org</a> (Schutz Flussdelfine)";
+      break;
+    case "bilder":
+      links[0].innerHTML = "<a href=\"https://sanctuaries.noaa.gov/education/teachers/dolphins/videos.html\">NOAA</a> (16 Edu-Videos weltweit)";
+      links[1].innerHTML = "<a href=\"https://www.wilddolphinproject.org/media/videos-tv-lectures\">Wild Dolphin Project</a> (Begegnungen)";
+      links[2].innerHTML = "<a href=\"https://www.pexels.com/search/videos/dolphins\">Pexels</a> (HD-Stock-Clips kostenlos)";
+      break;
+    default:
+      links[0] = ""; links[1] = ""; links[2] = "";
+  }
+}
+
 
 
 // ------- Filterfunktion --------
@@ -293,6 +338,8 @@ function neueSchriftgroesse(standard) {
   for (let i = 0; i < articles.length; i++) {
     articles[i].style.fontSize = size;
   }
+
+  document.getElementById("bild3").style.fontSize = size;
 }
 
 

@@ -181,7 +181,7 @@ figcaption{
 }
 
 article {
-  width: 30%;
+  width: 25%;
   font-size: 20px;
 
   background-color: #5057a6;
@@ -306,8 +306,14 @@ button:active {
   width: 500px;
 }
 
+#quizBlock{
+  width: 50%;
+}
+
 #questions{
   display: none;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 #quizbutton{
@@ -327,6 +333,12 @@ button:active {
   font-size: 18px;
   padding: 10px;
   background-color: #5057a6;
+}
+
+#interesse{
+  margin-left: 20px;
+  height: 40px;
+  font-size: 28px;
 }
 
 #rangeValue1,

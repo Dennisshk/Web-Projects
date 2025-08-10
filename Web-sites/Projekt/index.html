@@ -434,11 +434,11 @@ accordion fix?-->
 
 
     <section id="navInt">
-      <div class="block bigBlock">
+      <div class="block">
         <h2>Delfin-Quiz</h2>
         <div id="questions">
           <article>
-            <h4>Frage1: Wie atmen Delfine?</h4>
+            <h4>Frage 1: Wie atmen Delfine?</h4>
             <ol type="A">
               <li><input type="radio" name="frage1" id="f1a1"><label for="f1a1">Durch die Haut</label></li>
               <li><input type="radio" name="frage1" id="f1a2"><label for="f1a2">Durch die Kiemen</label></li>
@@ -447,7 +447,7 @@ accordion fix?-->
             </ol>
           </article>
           <article>
-            <h4>Frage2: Wie schlafen Delfine?</h4>
+            <h4>Frage 2: Wie schlafen Delfine?</h4>
             <ol type="A">
               <li><input type="radio" name="frage2" id="f2a1"><label for="f2a1">Mit einer Gehirnhälfte aktiv</label>
               </li><!---A-->
@@ -457,7 +457,7 @@ accordion fix?-->
             </ol>
           </article>
           <article>
-            <h4>Frage3: Welche Delfinart ist die größte?</h4>
+            <h4>Frage 3: Welche Delfinart ist die größte?</h4>
             <ol type="A">
               <li><input type="radio" name="frage3" id="f3a1"><label for="f3a1">Großer Tümmler</label></li>
               <li><input type="radio" name="frage3" id="f3a2"><label for="f3a2">Orca</label></li><!---A-->
@@ -466,7 +466,7 @@ accordion fix?-->
             </ol>
           </article>
           <article>
-            <h4>Frage4: Was macht Delfine besonders? (Mehrere Antworten möglich)</h4>
+            <h4>Frage 4: Was macht Delfine besonders? (Mehrere Antworten möglich)</h4>
             <ol type="A">
               <li><input type="checkbox" name="frage4" id="f4a1"><label for="f4a1">Sie benutzen Echoortung</label></li>
               <!---A-->
@@ -477,7 +477,7 @@ accordion fix?-->
             </ol>
           </article>
           <article>
-            <h4>Frage5: Warum sind manche Delfine gefährdet? (Mehrere Antworten möglich)</h4>
+            <h4>Frage 5: Warum sind manche Delfine gefährdet? (Mehrere Antworten möglich)</h4>
             <ol type="A">
               <li><input type="checkbox" name="frage5" id="f5a1"><label for="f5a1">Beifang in Fischernetzen</label></li>
               <!---A-->
@@ -490,32 +490,32 @@ accordion fix?-->
             </ol>
           </article>
           <article>
-            <h4>Frage6: Welche Art lebt in Flüssen?</h4>
+            <h4>Frage 6: Welche Art lebt in Flüssen? Es muss eine mögliche Art eingegeben werden, welche auf dieser Seite vorkam. Es wird nicht auf Großschreibung geachtet.</h4>
             <input type="text" placeholder="Antwort" id="f6"><!---Amazonas-Flussdelfin oder  Ganges-Delfin-->
           </article>
           <article>
-            <h4>Frage7: Wie nennt man eine Delfingruppe?</h4>
+            <h4>Frage 7: Wie nennt man eine Delfingruppe?</h4>
             <input type="text" placeholder="Antwort" id="f7"><!---Schulen-->
           </article>
           <article>
-            <h4>Frage8: Wie hoch ist die Lebenserwartung eines Delfins?</h4>
+            <h4>Frage 8: Wie hoch ist die Lebenserwartung eines Delfins?</h4>
             <input id="f8" type="range" min="1" value="1" max="50" onchange="rangeValue()"><span
               id="rangeValue2"></span><span>
               Jahre</span><!---20-->
           </article>
           <article>
-            <h4>Frage9: Wie schnell können manche Delfine schwimmen?</h4>
+            <h4>Frage 9: Wie schnell können manche Delfine schwimmen?</h4>
             <input id="f9" type="range" min="10" value="10" max="100" onchange="rangeValue()"><span
               id="rangeValue3"></span>
             <span> km/h</span><!---55-->
           </article>
           <article>
-            <h4>Frage10: Wie viele Delfinarten gibt es etwa?</h4>
+            <h4>Frage 10: Wie viele Delfinarten gibt es etwa?</h4>
             <input id="f10" type="range" min="30" value="30" max="70" onchange="rangeValue()"><span
               id="rangeValue4"></span><!---40-->
           </article>
         </div>
-        <article>
+        <article id="quizBlock">
           <h2 id="quiztitel">Teste hier dein <br> Wissen über Delfine.</h2>
           <button onclick="quizbutton()" id="quizbutton">Starten</button>
           <p id="ergebnis"></p>
@@ -524,33 +524,33 @@ accordion fix?-->
       </div>
 
 
-      <div class="block bigBlock">
-        <h2>Irgendwas</h2>
+      <div class="block littleBlock">
+        <h2>Wort erraten</h2>
       </div>
 
-      <div class="block bigBlock">
+      <div class="block littleBlock">
         <h2>Weitere Informationen</h2>
 
         <p>Du möchtest NOCH mehr über Delfine wissen? Wähle das Thema aus, wofür du dich interessierst, um paar Links
           mit weiteren Informationen zu bekommen.</p>
-        <span>Themengebiet:  </span><select id="Interesse">
-          <option value="">Allgemein</option>
-          <option value="">Lebensraum</option>
-          <option value="">Ernährung</option>
-          <option value="">Arten</option>
-          <option value="">Schutz von Delfinen</option>
-          <option value="">Bilder/Videos</option>
+        <span>Themengebiet:</span>
+        <select id="interesse" onchange="interessiert()">
+          <option value="allgemein">Allgemein</option>
+          <option value="lebensraum">Lebensraum</option>
+          <option value="nahrung">Ernährung</option>
+          <option value="arten">Arten</option>
+          <option value="schutz">Schutz von Delfinen</option>
+          <option value="bilder">Bilder/Videos</option>
         </select>
         <!---Select mit intereesiertem Bereich, 3 Links passen sich an-->
         <ul> <!---Switch Funktion, Select Box-->
-          <li><a href="https://www.google.de">Google</a></li>
-          <li><a href="https://www.google.de">Google</a></li>
-          <li><a href="https://www.google.de">Google</a></li>
-          <li><a href="https://www.google.de">Google</a></li>
+          <li class="links"><a href="https://www.google.de">Google</a></li>
+          <li class="links"><a href="https://www.google.de">Google</a></li>
+          <li class="links"><a href="https://www.google.de">Google</a></li>
         </ul>
       </div>
 
-      <div class="block bigBlock">
+      <div class="block">
         <h2>Textarea</h2>
       </div>
     </section>
