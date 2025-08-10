@@ -113,11 +113,12 @@ function wortbutton() {
     document.getElementById("worttitel").innerHTML = "Errate die einzelnen Buchstaben des Wortes.";
     document.getElementById("versuche").innerHTML = "Versuche übrig: 8";
     let wort = zufallsWort();
-    console.log(wort);
+    //console.log(wort);
     document.getElementById("loesung").style.display = "none";
     document.getElementById("loesung").innerHTML = wort;
-    let wortAnzeige;
+    let wortAnzeige = "";
     for (let i = 0; i < wort.length; i++) {
+      //console.log(wortAnzeige)
       wortAnzeige += "<span class = \"letters\">_</span>";
     }
     document.getElementById("wort").innerHTML = wortAnzeige;
@@ -144,9 +145,11 @@ function wortbutton() {
 function buchstabe() {
   let eingabe = document.getElementById("letter").value;
   //entferne Leerzeichen
-  eingabe = eingabe.trim;
+  eingabe = eingabe.trim();
   //Prüfe ob genau ein Buchstabe
-  if (eingabe === "" || eingabe.length == 0) {
+  if (eingabe.length === 0) {
+    console.log(eingabe === "");
+    console.log(" fgh " + (eingabe.length == 0));
     alert("Es muss ein Buchstabe eingegeben werden.");
     return;
   }
@@ -155,13 +158,13 @@ function buchstabe() {
     return;
   }
   //Co Pilots Test auf Buchstabe
-  if (!/^[a-zA-ZäöüÄÖÜß]$/.test(zeichen)) {
+  if (!/^[a-zA-ZäöüÄÖÜß]$/.test(eingabe)) {
     alert("Die Eingabe ist kein Buchstabe");
     return;
   }
 
   //Prüfe ob bereits gespeichert
-  let gerateneLetters = document.getElementById("wahl").value;
+  let gerateneLetters = document.getElementById("wahl").innerHTML;
   for (let i = 0; i < gerateneLetters.length; i++) {
     if (gerateneLetters[i].toLowerCase() == eingabe.toLowerCase()) {
       alert("Dieser Buchstabe wurde bereits gewählt");
@@ -173,7 +176,7 @@ function buchstabe() {
   document.getElementById("wahl").value = gerateneLetters + eingabe.toLowerCase();
 
   //prüfe ob in Lösung und öffne Buchstaben
-  let loesung = document.getElementById("loesung").value;
+  let loesung = document.getElementById("loesung").innerHTML;
   let wortAnzeige = document.getElementsByClassName("letters");
   let gefunden = false;
   for (let i = 0; i < loesung.length; i++) {
@@ -199,15 +202,15 @@ function buchstabe() {
 
     //prüfe Niederlage
     let versuche = document.getElementById("versuche").innerHTML;
-    let anzahl=parseInt(versuche[16]);
+    let anzahl = parseInt(versuche[16]);
     anzahl--;
-    document.getElementById("versuche").innerHTML = "Versuche übrig: "+anzahl;
-    if(anzahl==0){
+    document.getElementById("versuche").innerHTML = "Versuche übrig: " + anzahl;
+    if (anzahl == 0) {
       document.getElementById("worttitel").innerHTML = "keine Versuche mehr übrig.";
-    document.getElementById("buchstabenButton").style.display = "none";
-    document.getElementById("letter").style.display = "none";
-    document.getElementById("loesung").style.display = "block";
-    document.getElementById("loesung").innerHTML= "Die Lösung war \""+loesung+"\"";
+      document.getElementById("buchstabenButton").style.display = "none";
+      document.getElementById("letter").style.display = "none";
+      document.getElementById("loesung").style.display = "block";
+      document.getElementById("loesung").innerHTML = "Die Lösung war \"" + loesung + "\"";
     }
   }
 }
