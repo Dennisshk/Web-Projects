@@ -104,6 +104,31 @@ function nachricht(x) {
       return "bemerkenswert.";
   }
 }
+
+// --------- Wort-erraten Spiel ------------
+
+function wortbutton() {
+  if (document.getElementById("wortbutton").innerHTML === "Starten") {
+    document.getElementById("wortbutton").innerHTML = "Beenden";
+    document.getElementById("versuche").innerHTML = "Versuche übrig: 8";
+    let wort = zufallsWort();
+    document.getElementById("loesung").style.display = "none";
+    document.getElementById("loesung").innerHTML = wort;
+    let wortAnzeige;
+    for (let i = 0; i < wort.length; i++) {
+       wortAnzeige+="<span class = \"letter\">_</span>";
+    }
+    document.getElementById("wort").innerHTML = wortAnzeige;
+  }
+  document.getElementById("buchstabenButton").style.display = "block";
+}
+
+
+function zufallsWort() {
+  return "Backpapier";
+}
+
+
 // -------- Weitere Links ---------
 
 function interessiert() {

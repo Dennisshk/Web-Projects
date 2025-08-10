@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="de">
 
-<!--todo:  //Zum Auslesen von Checkboxen musst Du die ausgewählten Elemente in einem Array speichern.(Quiz)
-2 weitere Funktionen
+<!--todo:  //
+wort funktion
 footer
 Feedback Funktion?
 accordion fix?-->
@@ -490,7 +490,8 @@ accordion fix?-->
             </ol>
           </article>
           <article>
-            <h4>Frage 6: Welche Art lebt in Flüssen? Es muss eine mögliche Art eingegeben werden, welche auf dieser Seite vorkam. Es wird nicht auf Großschreibung geachtet.</h4>
+            <h4>Frage 6: Welche Art lebt in Flüssen? Es muss eine mögliche Art eingegeben werden, welche auf dieser
+              Seite vorkam. Es wird nicht auf Großschreibung geachtet.</h4>
             <input type="text" placeholder="Antwort" id="f6"><!---Amazonas-Flussdelfin oder  Ganges-Delfin-->
           </article>
           <article>
@@ -526,6 +527,14 @@ accordion fix?-->
 
       <div class="block littleBlock">
         <h2>Wort erraten</h2>
+        <article id="wortblock">
+          <div id="wort"></div>
+          <p id="loesung"></p>
+          <p id="versuche"></p>
+          <h2 id="worttitel">Teste hier dein <br> Wissen über Delfin-Wörter.</h2>
+          <button onclick="wortbutton()" id="wortbutton">Starten</button>
+          <button onclick="buchstabe()" id="buchstabenButton">Eingeben</button>
+        </article>
       </div>
 
       <div class="block littleBlock">
@@ -544,9 +553,12 @@ accordion fix?-->
         </select>
         <!---Select mit intereesiertem Bereich, 3 Links passen sich an-->
         <ul> <!---Switch Funktion, Select Box-->
-          <li class="links"><a href="https://www.google.de">Google</a></li>
-          <li class="links"><a href="https://www.google.de">Google</a></li>
-          <li class="links"><a href="https://www.google.de">Google</a></li>
+          <li class="links">"<a href="https://us.whales.org/whales-dolphins/facts-about-dolphins">Dolphin
+              Conservation</a> (Kurzer Überblick)</li>
+          <li class="links"><a href="https://dolphins.org/dolphin_information">Dolphins.org</a> (Geschichte,
+            Kommunikation, Anatomie)</li>
+          <li class="links"><a href="https://www.wwf.org.uk/learn/fascinating-facts/dolphins">WWF</a> (Lebensräume und
+            Arten)</li>
         </ul>
       </div>
 
@@ -561,16 +573,16 @@ accordion fix?-->
 
   <footer>
     <ul>
-      <li>irgendwelche Infos</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
+      <li>Projekt für IT-Zertifikat</li>
+      <li>Philosophische Fakultät</li>
+      <li>Modul 2</li>
+      <li>Studium Integrale</li>
     </ul>
     <ul>
-      <li>Noch mehr Infos</li>
-      <li>aaa</li>
-      <li>aaa</li>
-      <li>aaa</li>
+      <li>Uni zu Köln</li>
+      <li>Albertus-Magnus-Platz</li>
+      <li>50923 Köln</li>
+      <li>Nordrhein-Westfalen</li>
     </ul>
     <ul>
       <li>Sogar noch ein Paar Infos</li>
