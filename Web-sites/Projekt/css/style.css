@@ -271,7 +271,7 @@ button:active {
   padding: 15px;
 }
 
-.letter{
+.letters{
   margin-left: 10px;
   padding: 2px;
   border: #000 solid 2px;
@@ -330,6 +330,7 @@ button:active {
   height: 30px;
   font-size: 20px;
   margin-bottom: 15px;
+  display: none;
 }
 
 
@@ -345,9 +346,6 @@ button:active {
   margin-left: 40px;
   margin-bottom: 40px;
   padding: 15px;
-}
-#letter{
-  display: none;
 }
 
 #questions{
