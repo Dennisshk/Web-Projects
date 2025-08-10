@@ -118,7 +118,7 @@ function wortbutton() {
     document.getElementById("loesung").innerHTML = wort;
     let wortAnzeige;
     for (let i = 0; i < wort.length; i++) {
-      wortAnzeige += "<span class = \"letter\">_</span>";
+      wortAnzeige += "<span class = \"letters\">_</span>";
     }
     document.getElementById("wort").innerHTML = wortAnzeige;
     document.getElementById("buchstabenButton").style.display = "block";
@@ -137,38 +137,79 @@ function wortbutton() {
     document.getElementById("letter").style.display = "none";
 
     document.getElementById("wahl").innerHTML = "";
+    document.getElementById("textWahl").innerHTML = "";
   }
 }
 
-function buchstabe(){
+function buchstabe() {
   let eingabe = document.getElementById("letter").value;
   //entferne Leerzeichen
-  eingabe=eingabe.trim;
+  eingabe = eingabe.trim;
   //Prüfe ob genau ein Buchstabe
-  if(eingabe==="" || eingabe.length==0){
+  if (eingabe === "" || eingabe.length == 0) {
     alert("Es muss ein Buchstabe eingegeben werden.");
     return;
   }
-  if(eingabe.length > 1){
+  if (eingabe.length > 1) {
     alert("Es ist nur ein Buchstabe erlaubt");
     return;
   }
   //Co Pilots Test auf Buchstabe
-  if(!/^[a-zA-ZäöüÄÖÜß]$/.test(zeichen)){
+  if (!/^[a-zA-ZäöüÄÖÜß]$/.test(zeichen)) {
     alert("Die Eingabe ist kein Buchstabe");
     return;
   }
-  
+
   //Prüfe ob bereits gespeichert
   let gerateneLetters = document.getElementById("wahl").value;
-  for(let i = 0; i < gerateneLetters.length; i++){
-    if(gerateneLetters[i].toLowerCase() == eingabe.toLowerCase()){
+  for (let i = 0; i < gerateneLetters.length; i++) {
+    if (gerateneLetters[i].toLowerCase() == eingabe.toLowerCase()) {
       alert("Dieser Buchstabe wurde bereits gewählt");
       return;
     }
   }
+  //Füge hinzu
+  if (gerateneLetters == "") document.getElementById("textWahl").innerHTML = "Bereits gewählt: "
+  document.getElementById("wahl").value = gerateneLetters + eingabe.toLowerCase();
 
-  document.getElementById("wahl").value = gerateneLetters+eingabe.toLowerCase();
+  //prüfe ob in Lösung und öffne Buchstaben
+  let loesung = document.getElementById("loesung").value;
+  let wortAnzeige = document.getElementsByClassName("letters");
+  let gefunden = false;
+  for (let i = 0; i < loesung.length; i++) {
+    if (loesung[i].toLowerCase() == eingabe.toLowerCase()) {
+      gefunden = true;
+      //Damit Groß- Kleinschreibung konsistent bleibt
+      wortAnzeige[i].innerHTML = loesung[i];
+    }
+  }
+
+  if (gefunden) {
+    for (let i = 0; i < wortAnzeige.length; i++) {
+      if (wortAnzeige[i].innerHTML == "_") {
+        // Es wurde ein _ gefunden = es fehlen Buchstaben
+        return;
+      }
+    }
+    // Wenn aus for-Schleife rausgekommen ohne _ zu finden = fertig
+    document.getElementById("worttitel").innerHTML = "Glückwunsch! Das Wort wurde erraten.";
+    document.getElementById("buchstabenButton").style.display = "none";
+    document.getElementById("letter").style.display = "none";
+  } else {
+
+    //prüfe Niederlage
+    let versuche = document.getElementById("versuche").innerHTML;
+    let anzahl=parseInt(versuche[16]);
+    anzahl--;
+    document.getElementById("versuche").innerHTML = "Versuche übrig: "+anzahl;
+    if(anzahl==0){
+      document.getElementById("worttitel").innerHTML = "keine Versuche mehr übrig.";
+    document.getElementById("buchstabenButton").style.display = "none";
+    document.getElementById("letter").style.display = "none";
+    document.getElementById("loesung").style.display = "block";
+    document.getElementById("loesung").innerHTML= "Die Lösung war \""+loesung+"\"";
+    }
+  }
 }
 
 
