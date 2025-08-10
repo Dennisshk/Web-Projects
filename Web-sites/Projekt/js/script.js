@@ -110,22 +110,86 @@ function nachricht(x) {
 function wortbutton() {
   if (document.getElementById("wortbutton").innerHTML === "Starten") {
     document.getElementById("wortbutton").innerHTML = "Beenden";
+    document.getElementById("worttitel").innerHTML = "Errate die einzelnen Buchstaben des Wortes.";
     document.getElementById("versuche").innerHTML = "Versuche übrig: 8";
     let wort = zufallsWort();
+    console.log(wort);
     document.getElementById("loesung").style.display = "none";
     document.getElementById("loesung").innerHTML = wort;
     let wortAnzeige;
     for (let i = 0; i < wort.length; i++) {
-       wortAnzeige+="<span class = \"letter\">_</span>";
+      wortAnzeige += "<span class = \"letter\">_</span>";
     }
     document.getElementById("wort").innerHTML = wortAnzeige;
+    document.getElementById("buchstabenButton").style.display = "block";
+    document.getElementById("letter").style.display = "block";
+  } else {
+    if (!confirm("Wirklich beenden? Es wird kein Fortschritt gespeichert.")) return;
+    document.getElementById("wortbutton").innerHTML = "Starten";
+    document.getElementById("worttitel").innerHTML = "Teste hier dein <br> Wissen über Delfin-Wörter.";
+    document.getElementById("versuche").innerHTML = "";
+
+    document.getElementById("loesung").style.display = "none";
+    document.getElementById("loesung").innerHTML = "";
+
+    document.getElementById("wort").innerHTML = "";
+    document.getElementById("buchstabenButton").style.display = "none";
+    document.getElementById("letter").style.display = "none";
+
+    document.getElementById("wahl").innerHTML = "";
   }
-  document.getElementById("buchstabenButton").style.display = "block";
+}
+
+function buchstabe(){
+  let eingabe = document.getElementById("letter").value;
+  //entferne Leerzeichen
+  eingabe=eingabe.trim;
+  //Prüfe ob genau ein Buchstabe
+  if(eingabe==="" || eingabe.length==0){
+    alert("Es muss ein Buchstabe eingegeben werden.");
+    return;
+  }
+  if(eingabe.length > 1){
+    alert("Es ist nur ein Buchstabe erlaubt");
+    return;
+  }
+  //Co Pilots Test auf Buchstabe
+  if(!/^[a-zA-ZäöüÄÖÜß]$/.test(zeichen)){
+    alert("Die Eingabe ist kein Buchstabe");
+    return;
+  }
+  
+  //Prüfe ob bereits gespeichert
+  let gerateneLetters = document.getElementById("wahl").value;
+  for(let i = 0; i < gerateneLetters.length; i++){
+    if(gerateneLetters[i].toLowerCase() == eingabe.toLowerCase()){
+      alert("Dieser Buchstabe wurde bereits gewählt");
+      return;
+    }
+  }
+
+  document.getElementById("wahl").value = gerateneLetters+eingabe.toLowerCase();
 }
 
 
 function zufallsWort() {
-  return "Backpapier";
+  let dolphinWords = [
+    "Tümmler", "Orca", "Schwertwal", "Flussdelfin", "Irrawaddy", "Gangesdelfin", "Schnabeldelfin",
+    "Hector", "Schula", "Blasloch", "Flosse", "Rückenflosse", "Bauch", "Schnabel", "Melone",
+    "Echoortung", "Pfeifton", "Fischschwarm", "Tintenfisch", "Krustentiere", "Jagdmethode",
+    "Sozialverhalten", "Schwarm", "Meer", "Ozean", "Küste", "Wellen", "Springen", "Kommunikation",
+    "Schwimmen", "Schutzgebiet", "Beifang", "Korallenriff", "Lagune", "Süßwasser", "Salzwasser",
+    "Klimawandel", "Bedrohung", "Meeressäuger", "Unterwasser", "Plankton", "Sandbank", "Seetang",
+    "Schwarmjagd", "Luftblasen", "Navigation", "Treibnetz", "Fischfang", "Riffdelfin", "Buckeldelfin",
+    "Paarung", "Nachwuchs", "Wanderung", "Artenvielfalt", "Fortpflanzung", "Beute", "Nahrungssuche",
+    "Abtauchen", "Oberfläche", "Luft holen", "Forschungsprojekt", "Schiffsverkehr", "Geräuschemission"
+  ];
+
+  //Zahl zwischen 0-1 , Min=0*lenght=0, Max=0,99999*lenght=lenght-sehr kleine Zahl
+  let index = Math.random() * dolphinWords.length;
+  //abrunden, zwischen 0 und lenght-1
+  index = Math.floor(index);
+  return dolphinWords[index];
 }
 
 

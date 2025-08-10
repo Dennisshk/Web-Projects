@@ -277,6 +277,12 @@ button:active {
   border: #000 solid 2px;
 }
 
+.flex{
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+}
+
 /* ----------Identifier Deklaration---------- */
 
 #settingsBlock {
@@ -319,6 +325,12 @@ button:active {
 #buchstabenButton{
   display: none;
 }
+#letter{
+  width: 92px;
+  height: 30px;
+  font-size: 20px;
+  margin-bottom: 15px;
+}
 
 
 #quizBlock{
@@ -326,6 +338,16 @@ button:active {
 }
 #wortblock{
   width: 83%;
+  font-size: 20px;
+
+  background-color: #5057a6;
+
+  margin-left: 40px;
+  margin-bottom: 40px;
+  padding: 15px;
+}
+#letter{
+  display: none;
 }
 
 #questions{

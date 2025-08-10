@@ -527,14 +527,18 @@ accordion fix?-->
 
       <div class="block littleBlock">
         <h2>Wort erraten</h2>
-        <article id="wortblock">
+        <div id="wortblock">
+          <h2 id="worttitel">Teste hier dein <br> Wissen über Delfin-Wörter.</h2>
           <div id="wort"></div>
           <p id="loesung"></p>
           <p id="versuche"></p>
-          <h2 id="worttitel">Teste hier dein <br> Wissen über Delfin-Wörter.</h2>
-          <button onclick="wortbutton()" id="wortbutton">Starten</button>
-          <button onclick="buchstabe()" id="buchstabenButton">Eingeben</button>
-        </article>
+          <input type="text" placeholder="Buchstabe" id="letter">
+          <div class="flex">
+            <button onclick="buchstabe()" id="buchstabenButton">Eingeben</button>
+            <button onclick="wortbutton()" id="wortbutton">Starten</button>
+          </div>
+          <p id="wahl"></p>
+        </div>
       </div>
 
       <div class="block littleBlock">
