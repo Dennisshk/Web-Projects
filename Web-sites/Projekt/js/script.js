@@ -1,7 +1,7 @@
 // ----Quiz-----
 function quizbutton() {
   if (document.getElementById("quizbutton").innerHTML === "Starten") {
-    console.log("test");
+    //console.log("test");
     document.getElementById("quizbutton").innerText = "Auswertung";
     document.getElementById("questions").style.display = "flex";
     document.getElementById("quiztitel").innerHTML = "Zur Auswertung abgeben:";
@@ -53,7 +53,7 @@ function berechnePunkte() {
 
   if (document.getElementById("f6").value.toLowerCase().includes("amazonas-flussdelfin") || document.getElementById("f6").value.toLowerCase().includes("ganges-delfin")) points++;
   if (document.getElementById("f7").value.toLowerCase() == "schule") points++;
-  console.log(document.getElementById("f7").value.toLowerCase() == "schule");
+  //console.log(document.getElementById("f7").value.toLowerCase() == "schule");
 
   if (document.getElementById("f8").value >= 17 && document.getElementById("f8").value <= 23) points++;
   if (document.getElementById("f9").value >= 53 && document.getElementById("f9").value <= 57) points++;
@@ -141,7 +141,7 @@ function wortbutton() {
     document.getElementById("textWahl").innerHTML = "";
 
     document.getElementById("giphy2").src = "";
-    document.getElementById("giphy2").display = "none";
+    document.getElementById("giphy2").style.display = "none";
   }
 }
 
@@ -154,8 +154,8 @@ function buchstabe() {
   eingabe = eingabe.trim();
   //Prüfe ob genau ein Buchstabe
   if (eingabe.length === 0) {
-    console.log(eingabe === "");
-    console.log(" fgh " + (eingabe.length == 0));
+    //console.log(eingabe === "");
+    //console.log(" fgh " + (eingabe.length == 0));
     alert("Es muss ein Buchstabe eingegeben werden.");
     return;
   }
@@ -295,23 +295,24 @@ function interessiert() {
 function kontakt() {
   let empfaenger = "dshkrebe@smail.uni-koeln.de";
   let sender = document.getElementById("k1");
-  if (!sender) {
+  //console.log(sender+ " dygdgf  ");
+  if (!sender.value) {
     alert("E-Mail kann nicht leer sein.");
     return;
   }
   let subject = document.getElementById("k2");
-  if (!subject) {
+  if (!subject.value) {
     alert("Betreff kann nicht leer sein.");
     return;
   }
   let name = document.getElementById("k3");
-  if (name) {
+  if (!name.value) {
     name = " Diese E-Mail wurde von " + name + " verfasst. ";
   } else {
     name = " ";
   }
   let body = document.getElementById("k4");
-  if (!body) {
+  if (!body.value) {
     alert("Nachricht kann nicht leer sein.");
     return;
   }

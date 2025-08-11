@@ -13,7 +13,7 @@
 </head>
 
 <body id="navStart">
-  <header>
+  <header class="flex">
     <div>
       <h1>Delfine</h1>
       <p>Eine Webseite voller Informationen</p>
@@ -70,7 +70,7 @@
 
 
   <main>
-    <section>
+    <section class="flex">
       <div class="block">
         <h2>Einleitung</h2>
         Delfine sind faszinierende Meeressäuger, die für ihre <strong>Intelligenz</strong>, <strong>soziale
@@ -111,7 +111,7 @@
     </section>
 
 
-    <section id="navInfos1">
+    <section id="navInfos1" class="flex">
       <div class="block">
         <h2>Lebensraum</h2>
         Delfine leben in <strong>allen Weltmeeren</strong>, einige Arten auch in Flüssen. Besonders häufig trifft man
@@ -172,7 +172,7 @@
     </section>
 
 
-    <section id="navInfos2">
+    <section id="navInfos2" class="flex">
       <div class="block littleBlock">
         <h2>Delfinarten im Überblick</h2>
         Es gibt über <strong>40 Delfinarten</strong>, darunter bekannte wie der Große Tümmler, der Gemeine Delfin oder
@@ -201,7 +201,7 @@
         <h2>Die verschiedenen Arten</h2>
 
         <h5>Filter</h5>
-        <div id="filterdiv">
+        <div class="flex">
           <!---<input type="text" placeholder="1"><input type="text" placeholder="2">-->
           <div class="filterElement">
             <p>Lebensraum:</p>
@@ -427,7 +427,7 @@
     </section>
 
 
-    <section id="navInt">
+    <section id="navInt" class="flex">
       <div class="block">
         <h2>Delfin-Quiz</h2>
         <div id="questions">
@@ -541,7 +541,7 @@
       <figure>
         <img id="bild4" src="img/InfoBox3.jpg" alt="Delfin springt durch Reifen">
         <figcaption id="bild5">Mensch und Delfin haben ein sehr starkes Vertrauen zueinander. Delfine führen oft
-          akkrobatische Sprünge mit Menschen aus. Hier ist ein Beispiel dazu, wie ein Mensch einen Reifen hält und der
+          akrobatische Sprünge mit Menschen aus. Hier ist ein Beispiel dazu, wie ein Mensch einen Reifen hält und der
           Delfin durch diesen hindurch springt. </figcaption>
       </figure>
 
@@ -570,7 +570,7 @@
         <p>Immer noch nicht das Richtige gefunden? Dann kannst du im Internet nach den Themen suchen.</p>
       </div>
 
-      <div class="littleBlock block" id="kontaktBlock">
+      <form class="littleBlock block" id="kontaktBlock">
         <h2>Kontakt Formular</h2>
         <p>Du hast eine Frage, Anmerkung oder Vorschlag zu dieser Seite? <br>Dann fülle dieses Formular aus:</p>
         <p>Deine E-Mail: </p><input type="text" placeholder="E-Mail" id="k1"><br>
@@ -579,14 +579,14 @@
         <span>Text: </span><br><textarea placeholder="Deine Nachricht" id="k4"></textarea><br>
         <br>
         <button onclick="kontakt()">E-Mail Programm öffnen</button>
-      </div>
+      </form>
     </section>
 
 
   </main>
 
 
-  <footer>
+  <footer class="flex">
     <ul>
       <li>Projekt für IT-Zertifikat</li>
       <li>der Philosophischen Fakultät</li>
