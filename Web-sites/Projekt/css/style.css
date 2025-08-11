@@ -308,11 +308,16 @@ button:active {
   height: 350px;
 }
 
-#bild3{
+#bild4{
+  width: 430px;
+}
+
+#bild3, #bild5{
   color: rgb(0, 0, 0);
   width: 400px;
   font-size: 22px;
 }
+
 
 #wechselBild{
   width: 500px;
