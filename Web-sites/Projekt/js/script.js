@@ -139,8 +139,13 @@ function wortbutton() {
 
     document.getElementById("wahl").innerHTML = "";
     document.getElementById("textWahl").innerHTML = "";
+
+    document.getElementById("giphy2").src ="";
+    document.getElementById("giphy2").display="none";
   }
 }
+
+document.getElementById("giphy2").display="none";
 
 function buchstabe() {
   let eingabe = document.getElementById("letter").value;
@@ -200,6 +205,8 @@ function buchstabe() {
     document.getElementById("worttitel").innerHTML = "Glückwunsch! Das Wort wurde erraten.";
     document.getElementById("buchstabenButton").style.display = "none";
     document.getElementById("letter").style.display = "none";
+    document.getElementById("giphy2").src = "https://giphy.com/embed/fVtLLweVZACNbFF8Nn";
+    document.getElementById("giphy2").display="block";
   } else {
 
     //prüfe Niederlage
@@ -213,6 +220,8 @@ function buchstabe() {
       document.getElementById("letter").style.display = "none";
       document.getElementById("loesung").style.display = "block";
       document.getElementById("loesung").innerHTML = "Die Lösung war \"" + loesung + "\"";
+      document.getElementById("giphy2").src = "https://giphy.com/embed/VoRnF8sxWuTLO";
+      document.getElementById("giphy2").display="block";
     }
   }
 }
@@ -221,14 +230,14 @@ function buchstabe() {
 function zufallsWort() {
   let dolphinWords = [
     "Tümmler", "Orca", "Schwertwal", "Flussdelfin", "Irrawaddy", "Gangesdelfin", "Schnabeldelfin",
-    "Hector", "Schula", "Blasloch", "Flosse", "Rückenflosse", "Bauch", "Schnabel", "Melone",
+    "Hector", "Schule", "Blasloch", "Flosse", "Rückenflosse", "Bauch", "Schnabel", "Melone",
     "Echoortung", "Pfeifton", "Fischschwarm", "Tintenfisch", "Krustentiere", "Jagdmethode",
     "Sozialverhalten", "Schwarm", "Meer", "Ozean", "Küste", "Wellen", "Springen", "Kommunikation",
     "Schwimmen", "Schutzgebiet", "Beifang", "Korallenriff", "Lagune", "Süßwasser", "Salzwasser",
     "Klimawandel", "Bedrohung", "Meeressäuger", "Unterwasser", "Plankton", "Sandbank", "Seetang",
     "Schwarmjagd", "Luftblasen", "Navigation", "Treibnetz", "Fischfang", "Riffdelfin", "Buckeldelfin",
     "Paarung", "Nachwuchs", "Wanderung", "Artenvielfalt", "Fortpflanzung", "Beute", "Nahrungssuche",
-    "Abtauchen", "Oberfläche", "Luft holen", "Forschungsprojekt", "Schiffsverkehr", "Geräuschemission"
+    "Abtauchen", "Oberfläche", "Fisch", "Forschungsprojekt", "Schiffsverkehr", "Geräuschemission"
   ];
 
   //Zahl zwischen 0-1 , Min=0*lenght=0, Max=0,99999*lenght=lenght-sehr kleine Zahl
@@ -278,6 +287,35 @@ function interessiert() {
     default:
       links[0] = ""; links[1] = ""; links[2] = "";
   }
+}
+
+
+// -------- E-Mail Funktion --------
+
+function kontakt() {
+  let empfaenger = "dshkrebe@smail.uni-koeln.de";
+  let sender = document.getElementById("k1");
+  if(!sender){
+    alert("E-Mail kann nicht leer sein.");
+    return;
+  }
+  let subject = document.getElementById("k2");
+  if(!subject){
+    alert("Betreff kann nicht leer sein.");
+    return;
+  }
+  let name = document.getElementById("k3");
+  if(name){
+    name = " Diese E-Mail wurde von "+name+" verfasst. ";
+  }else{
+    name=" ";
+  }
+  let body = document.getElementById("k4");
+  if(!body){
+    alert("Nachricht kann nicht leer sein.");
+    return;
+  }
+  window.location.href = "mailto:" + empfaenger + "?subject=" + subject + "&body=" + (body+name+"Von: "+sender);
 }
 
 

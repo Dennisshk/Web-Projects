@@ -3,7 +3,7 @@
 
 <!--todo:  //
 bild mit reifen?
-wort fixen, gifs?, button disabled statt display?
+wort gifs?
 footer
 Feedback Funktion?
 accordion fix?-->
@@ -533,20 +533,22 @@ accordion fix?-->
           <div id="wort"></div>
           <p id="loesung"></p>
           <p id="versuche"></p>
-          <input type="text" placeholder="Buchstabe" id="letter">
           <div class="flex">
-            <button onclick="buchstabe()" id="buchstabenButton">Eingeben</button>
             <button onclick="wortbutton()" id="wortbutton">Starten</button>
+            <button onclick="buchstabe()" id="buchstabenButton">Eingeben</button>
+            <input type="text" placeholder="Buchstabe" id="letter">
           </div><br>
           <span id="textWahl"></span><span id="wahl"></span>
         </div>
+        <iframe id="giphy2" src="" width="480" height="271" frameBorder="0" class="giphy-embed"
+          allowFullScreen></iframe>
       </div>
 
       <div class="block littleBlock">
         <h2>Weitere Informationen</h2>
 
-        <p>Du möchtest NOCH mehr über Delfine wissen? Wähle das Thema aus, wofür du dich interessierst, um paar Links
-          mit weiteren Informationen zu bekommen.</p>
+        <p>Du möchtest NOCH mehr über Delfine wissen?<br> Wähle ein konkretes Thema aus und erhalte Links zu weiteren
+          Seiten, welche dieses Thema behandeln.</p>
         <span>Themengebiet:</span>
         <select id="interesse" onchange="interessiert()">
           <option value="allgemein">Allgemein</option>
@@ -555,20 +557,27 @@ accordion fix?-->
           <option value="arten">Arten</option>
           <option value="schutz">Schutz von Delfinen</option>
           <option value="bilder">Bilder/Videos</option>
-        </select>
-        <!---Select mit intereesiertem Bereich, 3 Links passen sich an-->
-        <ul> <!---Switch Funktion, Select Box-->
+        </select><br>
+        <ul> 
           <li class="links">"<a href="https://us.whales.org/whales-dolphins/facts-about-dolphins">Dolphin
               Conservation</a> (Kurzer Überblick)</li>
           <li class="links"><a href="https://dolphins.org/dolphin_information">Dolphins.org</a> (Geschichte,
             Kommunikation, Anatomie)</li>
           <li class="links"><a href="https://www.wwf.org.uk/learn/fascinating-facts/dolphins">WWF</a> (Lebensräume und
             Arten)</li>
-        </ul>
+        </ul><br>
+        <p>Immer noch nicht das Richtige gefunden? Dann kannst du im Internet nach den Themen suchen.</p>
       </div>
 
-      <div class="block">
-        <h2>Textarea</h2>
+      <div class="littleBlock block" id="kontaktBlock">
+        <h2>Kontakt Formular</h2>
+        <p>Du hast eine Frage, Anmerkung oder Vorschlag zu dieser Seite? <br>Dann fülle dieses Formular aus:</p>
+        <p>Deine E-Mail: </p><input type="text" placeholder="E-Mail" id="k1"><br>
+        <p>Thema: </p><input type="text" placeholder="Betreff" id="k2"><br>
+        <p>Dein Name (optional):</p><input type="text" placeholder="Name" id="k3"><br>
+        <span>Text: </span><br><textarea placeholder="Deine Nachricht" id="k4"></textarea><br>
+        <br>
+        <button onclick="kontakt()">E-Mail Programm öffnen</button>
       </div>
     </section>
 
