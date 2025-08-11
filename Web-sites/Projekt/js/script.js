@@ -17,7 +17,6 @@ function quizbutton() {
     disableQuizElements(true)
 
     if (x > 6) {
-      //document.getElementById("giphy").innerHTML = "<iframe src=\"https://giphy.com/embed/lShSjh2K3TpOwGwlwU\" width=\"480\" height=\"271\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe>";
       document.getElementById("giphy").innerHTML = "<iframe src=\"https://giphy.com/embed/eIyU7TVEkGFBmR01gm\" width=\"480\" height=\"271\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe>";
     } else {
       document.getElementById("giphy").innerHTML = "<iframe src=\"https://giphy.com/embed/9Y5BbDSkSTiY8\" width=\"480\" height=\"336\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe>";
@@ -77,7 +76,7 @@ function nachricht(x) {
     case -3:
       return "traurig.";
     case 0:
-      return "katastrophal. Selbst mit Zufall hätte man besser antworten können.";
+      return "katastrophal.";
     case 1:
       return "schrecklich.";
     case 2:
