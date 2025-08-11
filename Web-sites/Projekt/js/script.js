@@ -52,7 +52,7 @@ function berechnePunkte() {
   if (radios5[3].checked) points++;
 
   if (document.getElementById("f6").value.toLowerCase().includes("amazonas-flussdelfin") || document.getElementById("f6").value.toLowerCase().includes("ganges-delfin")) points++;
-  if (document.getElementById("f7").value.toLowerCase() == "schule") points++;
+  if (document.getElementById("f7").value.toLowerCase() == "schule" || document.getElementById("f7").value.toLowerCase() == "schulen") points++;
   //console.log(document.getElementById("f7").value.toLowerCase() == "schule");
 
   if (document.getElementById("f8").value >= 17 && document.getElementById("f8").value <= 23) points++;
