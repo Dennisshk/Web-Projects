@@ -22,6 +22,7 @@ function quizbutton() {
       document.getElementById("giphy").innerHTML = "<iframe src=\"https://giphy.com/embed/9Y5BbDSkSTiY8\" width=\"480\" height=\"336\" frameBorder=\"0\" class=\"giphy-embed\" allowFullScreen></iframe>";
     }
   } else {
+    //Beenden
     document.getElementById("quizbutton").innerText = "Starten";
     document.getElementById("questions").style.display = "none";
     document.getElementById("quiztitel").innerHTML = "Teste hier dein <br> Wissen über Delfine.";
@@ -104,6 +105,9 @@ function nachricht(x) {
   }
 }
 
+
+
+
 // --------- Wort-erraten Spiel ------------
 
 function wortbutton() {
@@ -124,6 +128,7 @@ function wortbutton() {
     document.getElementById("buchstabenButton").style.display = "block";
     document.getElementById("letter").style.display = "block";
   } else {
+    //Beenden
     if (!confirm("Wirklich beenden? Es wird kein Fortschritt gespeichert.")) return;
     document.getElementById("wortbutton").innerHTML = "Starten";
     document.getElementById("worttitel").innerHTML = "Teste hier dein <br> Wissen über Delfin-Wörter.";
@@ -146,11 +151,14 @@ function wortbutton() {
 
 document.getElementById("giphy2").style.display = "none";
 
+
 function buchstabe() {
   let eingabe = document.getElementById("letter").value;
   document.getElementById("letter").value = "";
+
   //entferne Leerzeichen
   eingabe = eingabe.trim();
+
   //Prüfe ob genau ein Buchstabe
   if (eingabe.length === 0) {
     //console.log(eingabe === "");
@@ -176,7 +184,8 @@ function buchstabe() {
       return;
     }
   }
-  //Füge hinzu
+
+  //Füge zur Liste hinzu
   if (gerateneLetters == "") document.getElementById("textWahl").innerHTML = "Bereits gewählt: "
   document.getElementById("wahl").innerHTML = gerateneLetters + eingabe.toUpperCase();
   //console.log(gerateneLetters +" neu: "+ eingabe.toUpperCase())
@@ -239,12 +248,15 @@ function zufallsWort() {
     "Abtauchen", "Oberfläche", "Fisch", "Forschungsprojekt", "Schiffsverkehr", "Geräuschemission"
   ];
 
-  //Zahl zwischen 0-1 , Min=0*lenght=0, Max=0,99999*lenght=lenght-sehr kleine Zahl
+  //Zahl zwischen 0-0.999999 , Min=0*lenght=0, Max=0,99999*lenght=lenght-sehr kleine Zahl
   let index = Math.random() * dolphinWords.length;
   //abrunden, zwischen 0 und lenght-1
   index = Math.floor(index);
   return dolphinWords[index];
 }
+
+
+
 
 
 // -------- Weitere Links ---------
@@ -289,6 +301,7 @@ function interessiert() {
 }
 
 
+
 // -------- E-Mail Funktion --------
 
 function kontakt() {
@@ -320,6 +333,9 @@ function kontakt() {
 
 
 
+
+
+
 // ------- Filterfunktion --------
 
 
@@ -327,14 +343,14 @@ function filtern() {
   let table = document.getElementById("arten");
   let rows = table.rows;
 
-  // Filterwerte holen
+  // prüfe welche Filter aktiv sind <=> gewählt wurden
   let leben = document.getElementById("leben").value;
   let groesse = getCheckedValue("groesse");
   let gef = getCheckedValue("gef");
   let erf = getCheckedValue("erf");
-  console.log(leben + groesse + gef + erf);
+  //console.log(leben + groesse + gef + erf);
 
-  //Anzeige aktualisieren
+  //Anzeige der benutzen Filter aktualisieren
   if (leben == "Alle" && !groesse && !gef && !erf) {
     document.getElementById("filterAnzeige").innerHTML = "Keine";
   } else {
@@ -411,6 +427,8 @@ function filterDefault() {
 }
 
 
+
+
 // ------- Bild bearbeiten --------
 function picture(next) {
   let index = document.getElementById("wechselBildRange").value;
@@ -481,6 +499,7 @@ function size(bigger) {
 
 
 
+
 // ------- Ranges aktualisieren --------
 //aktualisiere am Anfang
 rangeValue();
@@ -491,6 +510,8 @@ function rangeValue() {
   document.getElementById("rangeValue4").innerHTML = document.getElementById("f10").value;
   document.getElementById("rangeValue5").innerHTML = document.getElementById("widht").value;
 }
+
+
 
 // ------- Einstellungen-Buttons -------
 function neueSchriftgroesse(standard) {
@@ -514,6 +535,7 @@ function neueSchriftgroesse(standard) {
 
   document.getElementById("bild3").style.fontSize = size;
 }
+
 
 
 function navbar() {
@@ -547,12 +569,12 @@ function design() {
     document.body.style.background = "#bbb5b5c2"
     document.body.style.borderColor = "#b2b2b8"
 
-    //querySelectorAll wählt alle Elemente, die zu den Selektoren passen; Lambda, Streams wie in Java
+    //querySelectorAll wählt alle Elemente, die zu den Selektoren passen; Lambda, Streams wie in Java: Für jedes Element e wird Code angewendet
+    //Bei Standard-Farben gelten die CSS-Regeln und hover funktioniert
     document.querySelectorAll(".block, .littleBlock, .bigBlock, article, .panel, .accordion, .activeAccordion").forEach(e => {
       e.style.borderColor = "";
     });
 
-    //Bei Standard-Farben gelten die CSS-Regeln und hover funktioniert
     document.querySelectorAll("button, input").forEach(e => {
       e.style.backgroundColor = "";
       e.style.color = "";
