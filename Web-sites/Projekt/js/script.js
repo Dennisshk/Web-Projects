@@ -140,12 +140,12 @@ function wortbutton() {
     document.getElementById("wahl").innerHTML = "";
     document.getElementById("textWahl").innerHTML = "";
 
-    document.getElementById("giphy2").src ="";
-    document.getElementById("giphy2").display="none";
+    document.getElementById("giphy2").src = "";
+    document.getElementById("giphy2").display = "none";
   }
 }
 
-document.getElementById("giphy2").display="none";
+document.getElementById("giphy2").display = "none";
 
 function buchstabe() {
   let eingabe = document.getElementById("letter").value;
@@ -206,7 +206,7 @@ function buchstabe() {
     document.getElementById("buchstabenButton").style.display = "none";
     document.getElementById("letter").style.display = "none";
     document.getElementById("giphy2").src = "https://giphy.com/embed/fVtLLweVZACNbFF8Nn";
-    document.getElementById("giphy2").display="block";
+    document.getElementById("giphy2").display = "block";
   } else {
 
     //prüfe Niederlage
@@ -221,7 +221,7 @@ function buchstabe() {
       document.getElementById("loesung").style.display = "block";
       document.getElementById("loesung").innerHTML = "Die Lösung war \"" + loesung + "\"";
       document.getElementById("giphy2").src = "https://giphy.com/embed/VoRnF8sxWuTLO";
-      document.getElementById("giphy2").display="block";
+      document.getElementById("giphy2").display = "block";
     }
   }
 }
@@ -295,27 +295,27 @@ function interessiert() {
 function kontakt() {
   let empfaenger = "dshkrebe@smail.uni-koeln.de";
   let sender = document.getElementById("k1");
-  if(!sender){
+  if (!sender) {
     alert("E-Mail kann nicht leer sein.");
     return;
   }
   let subject = document.getElementById("k2");
-  if(!subject){
+  if (!subject) {
     alert("Betreff kann nicht leer sein.");
     return;
   }
   let name = document.getElementById("k3");
-  if(name){
-    name = " Diese E-Mail wurde von "+name+" verfasst. ";
-  }else{
-    name=" ";
+  if (name) {
+    name = " Diese E-Mail wurde von " + name + " verfasst. ";
+  } else {
+    name = " ";
   }
   let body = document.getElementById("k4");
-  if(!body){
+  if (!body) {
     alert("Nachricht kann nicht leer sein.");
     return;
   }
-  window.location.href = "mailto:" + empfaenger + "?subject=" + subject + "&body=" + (body+name+"Von: "+sender);
+  window.location.href = "mailto:" + empfaenger + "?subject=" + subject + "&body=" + (body + name + "Von: " + sender);
 }
 
 
@@ -552,22 +552,25 @@ function design() {
       e.style.borderColor = "";
     });
 
+    //Bei Standard-Farben gelten die CSS-Regeln und hover funktioniert
     document.querySelectorAll("button, input").forEach(e => {
-      e.style.backgroundColor = "#b4b8ca";
-      e.style.color = "#040105";
-      e.style.borderColor = "#212b46";
+      e.style.backgroundColor = "";
+      e.style.color = "";
+      e.style.borderColor = "";
     });
 
     document.querySelectorAll(".icon-bar a").forEach(e => {
       e.style.color = "rgb(178, 174, 202)";
     });
-    //Accordion wieder richtige Farbe
+
+    //Accordion wieder richtige Farbe; standard, damit hover gilt
     document.querySelectorAll(".accordion").forEach(e => {
-      e.style.color = "#104720";
-      e.style.background.color = "#b4cac8";
+      e.style.backgroundColor = "";
+      e.style.color = "";
     });
 
     document.getElementById("bild3").style.color = "#000000ff";
+    document.getElementById("bild5").style.color = "#000000ff";
 
   } else {
 
@@ -589,6 +592,7 @@ function design() {
     });
 
     document.getElementById("bild3").style.color = "#7877a0ff";
+    document.getElementById("bild5").style.color = "#7877a0ff";
   }
 }
 
