@@ -144,7 +144,7 @@ function wortbutton() {
   }
 }
 
-document.getElementById("giphy2").display = "none";
+document.getElementById("giphy2").style.display = "none";
 
 function buchstabe() {
   let eingabe = document.getElementById("letter").value;
@@ -205,7 +205,7 @@ function buchstabe() {
     document.getElementById("buchstabenButton").style.display = "none";
     document.getElementById("letter").style.display = "none";
     document.getElementById("giphy2").src = "https://giphy.com/embed/fVtLLweVZACNbFF8Nn";
-    document.getElementById("giphy2").display = "block";
+    document.getElementById("giphy2").style.display = "block";
   } else {
 
     //prüfe Niederlage
@@ -220,7 +220,7 @@ function buchstabe() {
       document.getElementById("loesung").style.display = "block";
       document.getElementById("loesung").innerHTML = "Die Lösung war \"" + loesung + "\"";
       document.getElementById("giphy2").src = "https://giphy.com/embed/VoRnF8sxWuTLO";
-      document.getElementById("giphy2").display = "block";
+      document.getElementById("giphy2").style.display = "block";
     }
   }
 }
@@ -293,25 +293,25 @@ function interessiert() {
 
 function kontakt() {
   let empfaenger = "dshkrebe@smail.uni-koeln.de";
-  let sender = document.getElementById("k1");
+  let sender = document.getElementById("k1").value;
   //console.log(sender+ " dygdgf  ");
-  if (!sender.value) {
+  if (!sender) {
     alert("E-Mail kann nicht leer sein.");
     return;
   }
-  let subject = document.getElementById("k2");
-  if (!subject.value) {
+  let subject = document.getElementById("k2").value;
+  if (!subject) {
     alert("Betreff kann nicht leer sein.");
     return;
   }
-  let name = document.getElementById("k3");
-  if (!name.value) {
+  let name = document.getElementById("k3").value;
+  if (!name) {
     name = " Diese E-Mail wurde von " + name + " verfasst. ";
   } else {
     name = " ";
   }
-  let body = document.getElementById("k4");
-  if (!body.value) {
+  let body = document.getElementById("k4").value;
+  if (!body) {
     alert("Nachricht kann nicht leer sein.");
     return;
   }
