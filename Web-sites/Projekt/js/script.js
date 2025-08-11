@@ -113,7 +113,7 @@ function wortbutton() {
     document.getElementById("worttitel").innerHTML = "Errate die einzelnen Buchstaben des Wortes.";
     document.getElementById("versuche").innerHTML = "Versuche übrig: 8";
     let wort = zufallsWort();
-    //console.log(wort);
+    console.log(wort);
     document.getElementById("loesung").style.display = "none";
     document.getElementById("loesung").innerHTML = wort;
     let wortAnzeige = "";
@@ -144,6 +144,7 @@ function wortbutton() {
 
 function buchstabe() {
   let eingabe = document.getElementById("letter").value;
+  document.getElementById("letter").value = "";
   //entferne Leerzeichen
   eingabe = eingabe.trim();
   //Prüfe ob genau ein Buchstabe
@@ -167,13 +168,14 @@ function buchstabe() {
   let gerateneLetters = document.getElementById("wahl").innerHTML;
   for (let i = 0; i < gerateneLetters.length; i++) {
     if (gerateneLetters[i].toLowerCase() == eingabe.toLowerCase()) {
-      alert("Dieser Buchstabe wurde bereits gewählt");
+      alert("Dieser Buchstabe wurde bereits gewählt.");
       return;
     }
   }
   //Füge hinzu
   if (gerateneLetters == "") document.getElementById("textWahl").innerHTML = "Bereits gewählt: "
-  document.getElementById("wahl").value = gerateneLetters + eingabe.toLowerCase();
+  document.getElementById("wahl").innerHTML = gerateneLetters + eingabe.toUpperCase();
+  //console.log(gerateneLetters +" neu: "+ eingabe.toUpperCase())
 
   //prüfe ob in Lösung und öffne Buchstaben
   let loesung = document.getElementById("loesung").innerHTML;
